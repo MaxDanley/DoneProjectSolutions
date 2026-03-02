@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Done Project Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --beige:     #e6e2d8;
+      --beige-lt:  #f0ede6;
+      --charcoal:  #2e2c2a;
+      --mid:       #7a7570;
+      --warm:      #c8bfaf;
+      --off-white: #faf8f5;
+      --accent:    #4e7d8c;
+      --accent-lt: rgba(78,125,140,0.08);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--beige);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 60px;
+      background: transparent;
+      transition: background 0.4s ease, padding 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(230,226,216,0.96);
+      backdrop-filter: blur(10px);
+      padding: 18px 60px;
+      border-bottom: 1px solid rgba(78,125,140,0.14);
+    }
+    .nav-logo {
+      display: flex; flex-direction: column; line-height: 1.1;
+      text-decoration: none; color: var(--charcoal);
+    }
+    .nav-logo .wordmark { font-family: var(--sans); font-weight: 500; font-size: 22px; letter-spacing: -0.5px; }
+    .nav-logo .wordmark .dot { color: var(--accent); }
+    .nav-logo .sub { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mid); margin-top: 1px; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; text-decoration: none; color: var(--mid); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: var(--charcoal); border-bottom: 1px solid var(--accent); padding-bottom: 1px; transition: color 0.2s; }
+    .nav-cta:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 60px 80px;
+      position: relative; overflow: hidden;
+      background: var(--beige);
+    }
+    #blueprint-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
+    }
+    .hero-vignette {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 85% at 30% 50%, rgba(230,226,216,0.88) 0%, transparent 100%),
+        radial-gradient(ellipse 45% 70% at 78% 55%, rgba(230,226,216,0.60) 0%, transparent 100%);
+    }
+    .hero-left { padding-top: 140px; align-self: center; position: relative; z-index: 2; }
+    .hero-eyebrow {
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 36px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+    .hero-headline {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(42px, 5.5vw, 72px); line-height: 1.12;
+      letter-spacing: -0.5px; color: var(--charcoal);
+      margin-bottom: 40px; max-width: 560px;
+    }
+    .hero-headline em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 15px; color: var(--mid); line-height: 1.75; max-width: 420px; margin-bottom: 52px; }
+    .hero-actions { display: flex; align-items: center; gap: 36px; }
+
+    .btn-primary {
+      display: inline-block; padding: 14px 32px;
+      background: var(--accent); color: #fff;
+      font-family: var(--sans); font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.25s;
+    }
+    .btn-primary:hover { background: #3c636f; }
+    .btn-text {
+      font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      border-bottom: 1px solid transparent; padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-text:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-right {
+      display: flex; justify-content: flex-end; align-items: center;
+      padding-top: 120px; position: relative; z-index: 2;
+    }
+    .hero-card {
+      width: 360px;
+      background: rgba(250,248,245,0.93);
+      backdrop-filter: blur(8px);
+      padding: 48px 44px;
+      border-left: 3px solid var(--accent);
+      box-shadow: 0 12px 48px rgba(46,44,42,0.10);
+    }
+    .hero-card-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .hero-card ul { list-style: none; }
+    .hero-card ul li {
+      font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--charcoal);
+      padding: 13px 0; border-bottom: 1px solid rgba(122,117,112,0.15);
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-card ul li::before { content: '—'; color: var(--accent); font-size: 14px; flex-shrink: 0; }
+    .hero-card ul li:last-child { border-bottom: none; }
+
+    /* ── DIVIDER ── */
+    .divider-section {
+      padding: 70px 60px;
+      border-top: 1px solid rgba(78,125,140,0.18);
+      border-bottom: 1px solid rgba(78,125,140,0.10);
+      display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: center;
+      background: var(--beige-lt);
+    }
+    .divider-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); }
+    .divider-text { font-family: var(--serif); font-size: clamp(20px, 2.5vw, 28px); font-weight: 300; line-height: 1.5; }
+
+    /* ── TENSION ── */
+    .tension {
+      padding: 100px 60px;
+      background: var(--charcoal); color: var(--beige);
+      position: relative; overflow: hidden;
+    }
+    .tension::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(78,125,140,0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78,125,140,0.13) 1px, transparent 1px),
+        linear-gradient(rgba(78,125,140,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78,125,140,0.05) 1px, transparent 1px);
+      background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+    }
+    .tension-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .tension-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 48px; }
+    .tension-headline { font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.2; margin-bottom: 32px; }
+    .tension-body { font-size: 15px; color: rgba(230,226,216,0.58); line-height: 1.85; max-width: 640px; margin-bottom: 64px; }
+    .tension-pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(78,125,140,0.18);
+    }
+    .pillar { background: var(--charcoal); padding: 44px 36px; border-top: 2px solid var(--accent); transition: background 0.3s; }
+    .pillar:hover { background: rgba(78,125,140,0.06); }
+    .pillar-num { font-family: var(--serif); font-size: 11px; letter-spacing: 2px; color: var(--accent); margin-bottom: 20px; }
+    .pillar-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--beige); margin-bottom: 16px; line-height: 1.25; }
+    .pillar-text { font-size: 13px; color: rgba(230,226,216,0.48); line-height: 1.75; }
+
+    /* ── SERVICES BAR ── */
+    .services-bar {
+      padding: 36px 60px;
+      border-top: 1px solid rgba(78,125,140,0.14);
+      border-bottom: 1px solid rgba(78,125,140,0.10);
+      background: var(--beige);
+      display: flex; align-items: center; overflow-x: auto;
+    }
+    .services-bar-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); white-space: nowrap; margin-right: 48px; flex-shrink: 0; }
+    .service-pill { font-family: var(--serif); font-size: 15px; color: var(--charcoal); white-space: nowrap; padding: 0 32px; border-left: 1px solid rgba(78,125,140,0.2); }
+    .service-pill:last-child { border-right: 1px solid rgba(78,125,140,0.2); }
+
+    /* ── APPROACH ── */
+    .approach { padding: 120px 60px; background: var(--beige-lt); }
+    .section-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; align-items: end; }
+    .section-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
+    .section-headline { font-family: var(--serif); font-size: clamp(32px, 3.5vw, 48px); font-weight: 300; line-height: 1.2; }
+    .section-intro { font-size: 15px; color: var(--mid); line-height: 1.8; align-self: end; }
+    .approach-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .approach-item {
+      background: var(--beige); padding: 52px 48px;
+      display: grid; grid-template-columns: 40px 1fr; gap: 28px; align-items: start;
+      border-left: 2px solid transparent;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .approach-item:hover { background: var(--off-white); border-left-color: var(--accent); }
+    .approach-item-num { font-family: var(--serif); font-size: 13px; letter-spacing: 1px; color: var(--accent); padding-top: 6px; }
+    .approach-item-title { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 14px; line-height: 1.2; }
+    .approach-item-text { font-size: 14px; color: var(--mid); line-height: 1.75; }
+
+    /* ── STATEMENT ── */
+    .statement {
+      padding: 130px 60px; background: var(--beige);
+      position: relative; overflow: hidden;
+    }
+    .statement::after {
+      content: '';
+      position: absolute; bottom: -60px; right: -60px;
+      width: 380px; height: 380px; border-radius: 50%;
+      border: 1px solid rgba(78,125,140,0.12); pointer-events: none;
+    }
+    .statement::before {
+      content: '';
+      position: absolute; bottom: -10px; right: -10px;
+      width: 240px; height: 240px; border-radius: 50%;
+      border: 1px solid rgba(78,125,140,0.07); pointer-events: none;
+    }
+    .statement-inner { max-width: 820px; position: relative; z-index: 1; }
+    .statement-quote { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 46px); font-weight: 300; line-height: 1.35; margin-bottom: 48px; }
+    .statement-quote em { font-style: italic; color: var(--accent); }
+    .statement-link { display: inline-flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--accent); }
+    .statement-link::after { content: '→'; font-size: 16px; transition: transform 0.2s; }
+    .statement-link:hover::after { transform: translateX(5px); }
+
+    /* ── ABOUT ── */
+    .about-section { padding: 120px 60px; background: var(--beige-lt); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .stat-card { padding: 36px 40px; border-left: 3px solid var(--accent); background: var(--beige); margin-bottom: 2px; transition: background 0.25s; }
+    .stat-card:hover { background: var(--off-white); }
+    .stat-number { font-family: var(--serif); font-size: 40px; color: var(--charcoal); font-weight: 300; }
+    .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-top: 6px; }
+
+    /* ── STEWARDSHIP ── */
+    .stewardship-section {
+      padding: 100px 60px; background: var(--charcoal); color: var(--beige);
+      position: relative; overflow: hidden;
+    }
+    .stewardship-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(78,125,140,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78,125,140,0.10) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ── CONTACT CTA ── */
+    .contact-cta {
+      padding: 100px 60px; background: var(--off-white);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      border-top: 2px solid var(--accent);
+    }
+    .cta-headline { font-family: var(--serif); font-size: clamp(30px, 3vw, 42px); font-weight: 300; line-height: 1.25; }
+    .cta-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+    .form-field input, .form-field textarea {
+      background: none; border: none;
+      border-bottom: 1px solid rgba(78,125,140,0.28);
+      padding: 10px 0;
+      font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--charcoal);
+      outline: none; transition: border-color 0.2s; width: 100%;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-bottom-color: var(--accent); }
+    .form-field textarea { resize: none; height: 90px; }
+    .form-submit { margin-top: 8px; display: flex; justify-content: flex-end; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--charcoal); color: rgba(230,226,216,0.5); padding: 64px 60px 40px; position: relative; }
+    footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent) 0%, transparent 70%); }
+    .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    .footer-brand .wordmark { font-family: var(--sans); font-weight: 500; font-size: 20px; color: var(--beige); letter-spacing: -0.5px; }
+    .footer-brand .wordmark .dot { color: var(--accent); }
+    .footer-brand .sub { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-top: 4px; margin-bottom: 20px; }
+    .footer-brand p { font-size: 13px; line-height: 1.7; }
+    .footer-col h4 { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 13px; color: rgba(230,226,216,0.5); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--beige); }
+    .footer-bottom { border-top: 1px solid rgba(78,125,140,0.12); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+    .footer-services { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; color: rgba(230,226,216,0.28); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.10s; }
+    .reveal-delay-2 { transition-delay: 0.20s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 24px 28px; }
+      nav.scrolled { padding: 16px 28px; }
+      .nav-links, .nav-cta { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 120px 28px 60px; min-height: auto; }
+      .hero-left { padding-top: 0; }
+      .hero-right { display: none; }
+      .divider-section, .tension, .approach, .statement, .about-section, .stewardship-section, .contact-cta { padding: 70px 28px; }
+      .tension-pillars, .section-header, .approach-items, .footer-top, .about-section, .contact-cta { grid-template-columns: 1fr; }
+      .approach-item { padding: 36px 28px; }
+      .services-bar { padding: 28px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <span class="wordmark">done<span class="dot">.</span></span>
+    <span class="sub">Project Solutions</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#stewardship">Stewardship</a></li>
+    <li><a href="#invest">Invest</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Let's Talk</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="blueprint-canvas"></canvas>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-left">
+    <p class="hero-eyebrow reveal">Owner's Representation &amp; Project Advisory</p>
+    <h1 class="hero-headline reveal reveal-delay-1">
+      Bringing <em>clarity</em> and momentum to complex construction projects.
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      We partner with owners and developers to proactively manage risk, align teams, and move projects forward - from early evaluation through construction.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#approach" class="btn-text">Our Approach</a>
+    </div>
+  </div>
+
+  <div class="hero-right reveal reveal-delay-2">
+    <div class="hero-card">
+      <p class="hero-card-label">We support projects during</p>
+      <ul>
+        <li>Early Project Evaluation &amp; Feasibility</li>
+        <li>Project Definition &amp; Due Diligence</li>
+        <li>Pre-Construction &amp; Team Alignment</li>
+        <li>Construction-Phase Owner Representation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-section">
+  <p class="divider-label reveal">The problem</p>
+  <p class="divider-text reveal reveal-delay-1">
+    Complex projects don't struggle from a lack of effort.<br>They struggle from a lack of alignment.
+  </p>
+</div>
+
+<!-- TENSION -->
+<section class="tension">
+  <div class="tension-inner">
+    <p class="tension-eyebrow reveal">Why projects lose momentum</p>
+    <h2 class="tension-headline reveal reveal-delay-1">
+      When budgets, schedules, teams, and decisions drift out of sync - even well-intentioned projects lose momentum.
+    </h2>
+    <p class="tension-body reveal reveal-delay-2">
+      We step in to bring structure, accountability, and focus - helping ownership teams make informed decisions and keep projects moving. Our role adapts to the needs of each project, but our focus is consistent: clear decisions, disciplined execution, and fewer surprises.
+    </p>
+    <div class="tension-pillars">
+      <div class="pillar reveal">
+        <p class="pillar-num">01</p>
+        <h3 class="pillar-title">Decision-Driven</h3>
+        <p class="pillar-text">We focus on the decisions that shape outcomes, not just the tasks that fill schedules.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <p class="pillar-num">02</p>
+        <h3 class="pillar-title">Aligned Early, Managed Continuously</h3>
+        <p class="pillar-text">Cost, schedule, design intent, and incentives are aligned early and proactively managed as the project evolves.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <p class="pillar-num">03</p>
+        <h3 class="pillar-title">Senior Involvement Throughout</h3>
+        <p class="pillar-text">Direct access to experienced leadership. No handoffs. No layers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES BAR -->
+<div class="services-bar">
+  <p class="services-bar-label">Services</p>
+  <span class="service-pill">Owner's Representation</span>
+  <span class="service-pill">Construction Management</span>
+  <span class="service-pill">Pre-Construction</span>
+  <span class="service-pill">Due Diligence</span>
+  <span class="service-pill">Project Definition</span>
+  <span class="service-pill">Feasibility Advisory</span>
+</div>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="section-header">
+    <div>
+      <p class="section-label reveal">Our Capabilities</p>
+      <h2 class="section-headline reveal reveal-delay-1">Every project is different - but most break down in familiar ways.</h2>
+    </div>
+    <p class="section-intro reveal reveal-delay-2">
+      Budgets drift. Schedules slip. Teams lose alignment. Decisions get deferred instead of made. We partner with owners and developers to bring structure, accountability, and momentum to complex projects.
+    </p>
+  </div>
+  <div class="approach-items">
+    <div class="approach-item reveal">
+      <span class="approach-item-num">01</span>
+      <div>
+        <h3 class="approach-item-title">Early Project Evaluation</h3>
+        <p class="approach-item-text">Grounding projects in realistic cost, schedule, and risk expectations before commitments are made. We help you understand what you're getting into before you're in it.</p>
+      </div>
+    </div>
+    <div class="approach-item reveal reveal-delay-1">
+      <span class="approach-item-num">02</span>
+      <div>
+        <h3 class="approach-item-title">Project Definition &amp; Due Diligence</h3>
+        <p class="approach-item-text">Defining scope, aligning stakeholders, and surfacing risks early - so that decision-making is informed and the project starts on solid footing.</p>
+      </div>
+    </div>
+    <div class="approach-item reveal reveal-delay-1">
+      <span class="approach-item-num">03</span>
+      <div>
+        <h3 class="approach-item-title">Pre-Construction &amp; Team Alignment</h3>
+        <p class="approach-item-text">Coordinating design, procurement, and contractor selection with disciplined oversight - ensuring cost, schedule, and intent stay aligned before construction begins.</p>
+      </div>
+    </div>
+    <div class="approach-item reveal reveal-delay-2">
+      <span class="approach-item-num">04</span>
+      <div>
+        <h3 class="approach-item-title">Construction-Phase Owner Representation</h3>
+        <p class="approach-item-text">Serving as an experienced extension of the ownership team through delivery - protecting interests, resolving issues, and keeping the project on track.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="statement-inner">
+    <p class="section-label reveal">Our Belief</p>
+    <p class="statement-quote reveal reveal-delay-1">
+      "Projects succeed when they are <em>proactively managed</em> - not just coordinated."
+    </p>
+    <a href="#approach" class="statement-link reveal reveal-delay-2">View Our Approach</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div>
+    <p class="section-label reveal">About Done Project Solutions</p>
+    <h2 class="section-headline reveal reveal-delay-1" style="margin-bottom: 28px;">Boutique. Selective. Senior-Led.</h2>
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:28px;" class="reveal reveal-delay-2">
+      Done Project Solutions was formed around a simple belief: projects perform better when experienced leaders stay close to the work.
+    </p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:40px;" class="reveal reveal-delay-2">
+      Our standards were shaped on large, complex projects where accountability, clarity, and execution discipline were non-negotiable. We operate as a boutique firm by design - selective in our partnerships and focused on where our involvement creates meaningful value.
+    </p>
+    <a href="#" class="btn-text reveal reveal-delay-3">Learn More About Us</a>
+  </div>
+  <div class="reveal reveal-delay-2">
+    <div class="stat-card">
+      <p class="stat-number">$4B+</p>
+      <p class="stat-label">Construction Value Supported</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-number" style="font-size:26px;font-style:italic;">Boutique by Design</p>
+      <p class="stat-label">Selective Partnerships Only</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-number" style="font-size:20px;font-style:italic;line-height:1.4;">Hospitality - Multifamily<br>Technically Complex Development</p>
+      <p class="stat-label" style="margin-top:12px;">Primary Project Sectors</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEWARDSHIP -->
+<section class="stewardship-section" id="stewardship">
+  <div style="max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:1;">
+    <p class="reveal" style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:32px;">Stewardship</p>
+    <h2 class="reveal reveal-delay-1" style="font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.3;margin-bottom:28px;">
+      We believe our work, time, and resources are entrusted to us by God.
+    </h2>
+    <p class="reveal reveal-delay-2" style="font-size:15px;color:rgba(230,226,216,0.55);line-height:1.8;margin-bottom:48px;">
+      As part of that responsibility, we commit a portion of our revenue and time to serving organizations creating meaningful, long-term community impact - including faith-aligned organizations, community and mission-driven facilities, and groups needing planning or execution support.
+    </p>
+    <a href="#" class="btn-primary reveal reveal-delay-3">Learn About Our Commitment</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-cta" id="contact">
+  <div>
+    <p class="section-label reveal">Let's Talk</p>
+    <h2 class="cta-headline reveal reveal-delay-1">
+      If you're navigating a complex project and want an experienced partner at the table - we should talk.
+    </h2>
+  </div>
+  <form class="cta-form reveal reveal-delay-2" onsubmit="return false;">
+    <div class="form-row">
+      <div class="form-field"><label>First Name</label><input type="text" placeholder="Jane" /></div>
+      <div class="form-field"><label>Last Name</label><input type="text" placeholder="Smith" /></div>
+    </div>
+    <div class="form-field"><label>Email</label><input type="email" placeholder="jane@company.com" /></div>
+    <div class="form-field"><label>Project Type</label><input type="text" placeholder="Hospitality, Multifamily, Other..." /></div>
+    <div class="form-field"><label>Tell us about your project</label><textarea placeholder="A brief overview - we'll take it from there."></textarea></div>
+    <div class="form-submit">
+      <button type="submit" class="btn-primary">Send Message -></button>
+    </div>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <p class="wordmark">done<span class="dot">.</span></p>
+      <p class="sub">Project Solutions</p>
+      <p>Bringing clarity and momentum to complex construction projects. Boutique owner's representation and project advisory.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Approach &amp; Capabilities</a></li>
+        <li><a href="#">Project Experience</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Stewardship</a></li>
+        <li><a href="#">Invest With Our Partners</a></li>
+        <li><a href="#">Client Portal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@doneprojectsolutions.com">info@doneprojectsolutions.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <div style="margin-top:36px;">
+        <h4>Client Access</h4>
+        <ul style="margin-top:12px;">
+          <li><a href="#">Project Dashboard Login -></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Done Project Solutions. All rights reserved.</p>
+    <div class="footer-services">
+      <span>Project Development</span>
+      <span>Owner's Representation</span>
+      <span>Construction Management</span>
+      <span>Pre-Construction</span>
+      <span>Due Diligence</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* -------------------------------------------------------------
+   BLUEPRINT ARCHITECTURAL DRAWING - Canvas
+------------------------------------------------------------- */
+(function () {
+  const canvas = document.getElementById('blueprint-canvas');
+  const hero   = canvas.parentElement;
+  const A = (o) => 'rgba(78,125,140,' + o + ')';
+  const W2 = (o) => 'rgba(200,191,175,' + o + ')';
+
+  function resize() {
+    canvas.width  = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+    draw();
+  }
+
+  function draw() {
+    const W = canvas.width, H = canvas.height;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, W, H);
+
+    const gs = 22, major = 4;
+    for (let x = 0; x <= W; x += gs) {
+      const m  = (Math.round(x / gs) % major === 0);
+      const f  = Math.max(0, Math.min(1, (x / W - 0.30) / 0.22));
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+      ctx.strokeStyle = A((m ? 0.11 : 0.05) * f);
+      ctx.lineWidth   = m ? 0.7 : 0.35;
+      ctx.stroke();
+    }
+    for (let y = 0; y <= H; y += gs) {
+      const m = (Math.round(y / gs) % major === 0);
+      const fx = 0.38;
+      ctx.beginPath(); ctx.moveTo(W * fx, y); ctx.lineTo(W, y);
+      ctx.strokeStyle = A(m ? 0.09 : 0.04);
+      ctx.lineWidth   = m ? 0.6 : 0.3;
+      ctx.stroke();
+    }
+
+    const ox = W * 0.44, oy = H * 0.10;
+    const pw = W * 0.51, ph = H * 0.76;
+    const wt = 11;
+
+    ctx.fillStyle = A(0.04);
+    ctx.fillRect(ox, oy, pw, ph);
+
+    ctx.strokeStyle = A(0.24); ctx.lineWidth = 1.2;
+    ctx.strokeRect(ox, oy, pw, ph);
+
+    ctx.strokeStyle = A(0.14); ctx.lineWidth = 0.7;
+    ctx.strokeRect(ox + wt, oy + wt, pw - wt*2, ph - wt*2);
+
+    ctx.strokeStyle = A(0.18); ctx.lineWidth = 0.9;
+    const segs = [
+      [ox+wt,       oy+ph*0.36, ox+pw-wt,     oy+ph*0.36],
+      [ox+wt,       oy+ph*0.62, ox+pw-wt,     oy+ph*0.62],
+      [ox+pw*0.55,  oy+ph*0.62, ox+pw*0.55,   oy+ph-wt ],
+      [ox+pw*0.40,  oy+wt,      ox+pw*0.40,   oy+ph*0.36],
+      [ox+pw*0.40,  oy+ph*0.36, ox+pw*0.40,   oy+ph*0.62],
+      [ox+pw*0.68,  oy+wt,      ox+pw*0.68,   oy+ph*0.36],
+    ];
+    segs.forEach(([x1,y1,x2,y2]) => {
+      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    });
+
+    function door(cx, cy, r, a0, a1, ccw) {
+      ctx.strokeStyle = A(0.20); ctx.lineWidth = 0.8;
+      ctx.beginPath(); ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + Math.cos(a0)*r, cy + Math.sin(a0)*r);
+      ctx.stroke();
+      ctx.beginPath(); ctx.arc(cx, cy, r, a0, a1, ccw); ctx.stroke();
+    }
+    door(ox+pw*0.40, oy+ph*0.36-1, 22, Math.PI*0.5, Math.PI, false);
+    door(ox+pw*0.40, oy+ph*0.62-1, 22, Math.PI*0.5, Math.PI, false);
+    door(ox+pw-wt-1, oy+ph*0.18,   20, Math.PI,     Math.PI*1.5, false);
+    door(ox+pw*0.55-1, oy+ph*0.62, 18, 0, Math.PI*0.5, false);
+
+    ctx.strokeStyle = A(0.28); ctx.lineWidth = 2;
+    function wdw(x1,y1,x2,y2) { ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); }
+    wdw(ox+pw*0.18, oy,     ox+pw*0.34, oy);
+    wdw(ox+pw*0.52, oy,     ox+pw*0.72, oy);
+    wdw(ox+pw,      oy+ph*0.18, ox+pw, oy+ph*0.34);
+    wdw(ox+pw,      oy+ph*0.52, ox+pw, oy+ph*0.68);
+    wdw(ox+pw*0.15, oy+ph, ox+pw*0.38, oy+ph);
+
+    ctx.strokeStyle = A(0.13); ctx.lineWidth = 0.6;
+    for (let s = 0; s < 7; s++) {
+      ctx.strokeRect(ox+wt+6 + s*9, oy+ph*0.68+8 + s*6, pw*0.20 - s*9, 5);
+    }
+
+    [[ox,oy],[ox+pw,oy],[ox,oy+ph],[ox+pw,oy+ph],
+     [ox+pw*0.40,oy],[ox+pw*0.68,oy],[ox+pw*0.40,oy+ph*0.36],[ox+pw*0.68,oy+ph*0.36]
+    ].forEach(([cx,cy]) => {
+      ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI*2);
+      ctx.fillStyle = A(0.18); ctx.fill();
+      ctx.strokeStyle = A(0.30); ctx.lineWidth = 0.8; ctx.stroke();
+    });
+
+    ctx.setLineDash([4, 6]); ctx.lineWidth = 0.6;
+    ctx.font = '8px DM Sans, sans-serif';
+
+    function dim(x1,y1,x2,y2,label,lx,ly,angle) {
+      ctx.strokeStyle = A(0.15);
+      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+      const ang = Math.atan2(y2-y1,x2-x1)+Math.PI/2, tk=6;
+      [[x1,y1],[x2,y2]].forEach(([px,py])=>{
+        ctx.beginPath();
+        ctx.moveTo(px+Math.cos(ang)*tk, py+Math.sin(ang)*tk);
+        ctx.lineTo(px-Math.cos(ang)*tk, py-Math.sin(ang)*tk);
+        ctx.stroke();
+      });
+      ctx.setLineDash([]);
+      ctx.fillStyle = A(0.28);
+      ctx.save();
+      if (angle) { ctx.translate(lx,ly); ctx.rotate(angle); ctx.fillText(label,-ctx.measureText(label).width/2, 0); ctx.restore(); }
+      else        { ctx.fillText(label,lx,ly); ctx.restore(); }
+      ctx.setLineDash([4,6]);
+    }
+
+    dim(ox, oy-28, ox+pw, oy-28, 'PLAN WIDTH', ox+pw*0.35, oy-33, 0);
+    dim(ox-30, oy, ox-30, oy+ph, 'PLAN HEIGHT', ox-12, oy+ph*0.50, -Math.PI/2);
+    dim(ox, oy+ph*0.36+16, ox+pw*0.40, oy+ph*0.36+16, 'ZONE A', ox+pw*0.15, oy+ph*0.36+27, 0);
+    ctx.setLineDash([]);
+
+    const ex = ox + pw + 30;
+    ctx.strokeStyle = A(0.10); ctx.lineWidth = 0.5;
+    for (let i = 0; i <= 6; i++) {
+      const ey = oy + (ph/6)*i;
+      ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(ex+50, ey); ctx.stroke();
+      ctx.fillStyle = A(0.18);
+      ctx.font = '7px DM Sans, sans-serif';
+      ctx.fillText('FL+'+ (i*3) +'.0M', ex+4, ey-3);
+    }
+
+    if (W > 700) {
+      const cX = ox + pw - 32, cY = oy - 56, cR = 24;
+      ctx.save();
+      ctx.strokeStyle = A(0.22); ctx.lineWidth = 0.8;
+      ctx.beginPath(); ctx.arc(cX, cY, cR, 0, Math.PI*2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(cX, cY-cR+3); ctx.lineTo(cX-5, cY+3); ctx.lineTo(cX, cY); ctx.closePath();
+      ctx.fillStyle = A(0.22); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(cX, cY+cR-3); ctx.lineTo(cX+5, cY-3); ctx.lineTo(cX, cY); ctx.closePath();
+      ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(cX-cR+3, cY); ctx.lineTo(cX+cR-3, cY); ctx.stroke();
+      ctx.fillStyle = A(0.32); ctx.font = 'bold 8px DM Sans, sans-serif';
+      ctx.fillText('N', cX-3, cY-cR-5);
+      ctx.restore();
+    }
+
+    if (H > 400) {
+      const tbX = ox + pw - 165, tbY = oy + ph + 18;
+      ctx.strokeStyle = A(0.16); ctx.lineWidth = 0.7;
+      ctx.strokeRect(tbX, tbY, 165, 58);
+      ctx.beginPath(); ctx.moveTo(tbX, tbY+20); ctx.lineTo(tbX+165, tbY+20); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(tbX, tbY+39); ctx.lineTo(tbX+165, tbY+39); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(tbX+85, tbY+39); ctx.lineTo(tbX+85, tbY+58); ctx.stroke();
+      ctx.fillStyle = A(0.22); ctx.font = '7px DM Sans, sans-serif';
+      ctx.fillText('PROJECT', tbX+5, tbY+13);
+      ctx.fillText('DONE PROJECT SOLUTIONS', tbX+5, tbY+33);
+      ctx.fillText('SCALE 1:200', tbX+5, tbY+52);
+      ctx.fillText('A1.01', tbX+90, tbY+52);
+    }
+
+    ctx.strokeStyle = A(0.14); ctx.lineWidth = 0.5;
+    [ox+pw*0.40, ox+pw*0.68].forEach(x => {
+      [oy, oy+ph*0.36, oy+ph*0.62, oy+ph].forEach(y => {
+        ctx.beginPath(); ctx.moveTo(x-7,y); ctx.lineTo(x+7,y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(x,y-7); ctx.lineTo(x,y+7); ctx.stroke();
+        ctx.beginPath(); ctx.arc(x,y,2.5,0,Math.PI*2);
+        ctx.strokeStyle = A(0.22); ctx.stroke();
+        ctx.strokeStyle = A(0.14);
+      });
+    });
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+})();
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible')), 150);
+</script>
+</body>
+</html>
