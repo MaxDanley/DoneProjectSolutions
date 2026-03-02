@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
-import React from 'react'
+import React from 'react';
+import { Linkedin } from 'lucide-react';
 import blueprintsDeskImg from "@/assets/blueprints-desk.jpg";
 import heroHomeImg from "@/assets/hero-home.jpg";
 import BlueprintCanvas from '@/components/BlueprintCanvas';
@@ -57,6 +58,17 @@ const About = () => {
                 <p style={{ fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", color: "#4e7d8c", marginTop: stat.label === "Primary Project Sectors" ? 12 : 6 }}>{stat.label}</p>
               </div>
             ))}
+            <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(78,125,140,0.2)" }}>
+              <p style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 14 }}>Connect</p>
+              <a href="https://www.linkedin.com/in/bailey-fait-961496106/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#2e2c2a", textDecoration: "none", marginBottom: 8, transition: "color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#4e7d8c")} onMouseLeave={(e) => (e.currentTarget.style.color = "#2e2c2a")}>
+                <Linkedin size={18} strokeWidth={1.5} style={{ flexShrink: 0 }} />
+                Bailey Fait 
+              </a>
+              <a href="https://www.linkedin.com/company/doneprojectsolutions" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#2e2c2a", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#4e7d8c")} onMouseLeave={(e) => (e.currentTarget.style.color = "#2e2c2a")}>
+                <Linkedin size={18} strokeWidth={1.5} style={{ flexShrink: 0 }} />
+                Done Project Solutions 
+              </a>
+            </div>
           </div>
         </ScrollReveal>
       </section>
