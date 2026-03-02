@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -93,7 +93,7 @@ const ServicePageTemplate = ({ title, subtitle, deliverDesc, deliverItems, factT
           <ScrollReveal delay={1}>
             <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
               <a className="btn-primary" href="tel:+18005550199">Call Us Now</a>
-              <Link to="/#contact" className="btn-text">Send Message</Link>
+              <a href="mailto:contactus@doneprojectsolutions.com" className="btn-text">Send Message</a>
             </div>
           </ScrollReveal>
         </div>

@@ -103,7 +103,7 @@ const Services = () => {
           <ScrollReveal delay={1}>
             <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
               <a className="btn-primary" href="tel:+18005550199">Call Us Now</a>
-              <Link to="/#contact" className="btn-text">Send Message</Link>
+              <a href="mailto:contactus@doneprojectsolutions.com" className="btn-text">Send Message</a>
             </div>
           </ScrollReveal>
         </div>

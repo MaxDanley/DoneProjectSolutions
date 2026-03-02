@@ -53,7 +53,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={3} immediate>
             <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
-              <a href="#contact" className="btn-primary">Get in Touch</a>
+              <a href="mailto:contactus@doneprojectsolutions.com" className="btn-primary">Get in Touch</a>
               <a href="#experience" className="btn-text">Our Services</a>
             </div>
           </ScrollReveal>
@@ -411,7 +411,7 @@ const Index = () => {
             <p style={{ fontSize: 15, color: "#7a7570", marginBottom: 24 }}>
               We work with select investment and development partners to evaluate opportunities, mitigate execution risk, and protect long-term value in complex projects.
             </p>
-            <a className="btn-primary" href="mailto:info@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
+            <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
           </div>
         </ScrollReveal>
       </section>
@@ -436,7 +436,7 @@ const Index = () => {
           </ScrollReveal>
         </div>
         <ScrollReveal delay={2}>
-          <form style={{ display: "flex", flexDirection: "column", gap: 16 }} action="mailto:info@doneprojectsolutions.com" method="post" encType="text/plain">
+          <form style={{ display: "flex", flexDirection: "column", gap: 16 }} action="mailto:contactus@doneprojectsolutions.com" method="post" encType="text/plain">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="form-row-grid">
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 <label style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c" }}>First Name</label>

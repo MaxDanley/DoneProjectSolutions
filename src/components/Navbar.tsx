@@ -86,9 +86,8 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <Link
-        to="/#contact"
-        onClick={() => handleNavClick("/#contact")}
+      <a
+        href="mailto:contactus@doneprojectsolutions.com"
         className="nav-cta-desktop"
         style={{
           fontSize: 12,
@@ -104,7 +103,7 @@ const Navbar = () => {
         onMouseLeave={(e) => (e.currentTarget.style.color = "#2e2c2a")}
       >
         Let's Talk
-      </Link>
+      </a>
 
       {/* Mobile toggle */}
       <button
@@ -148,14 +147,14 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/#contact"
-            onClick={() => handleNavClick("/#contact")}
+          <a
+            href="mailto:contactus@doneprojectsolutions.com"
+            onClick={() => setMobileOpen(false)}
             className="btn-primary"
             style={{ textAlign: "center", marginTop: 8 }}
           >
             Let's Talk
-          </Link>
+          </a>
         </div>
       )}
 

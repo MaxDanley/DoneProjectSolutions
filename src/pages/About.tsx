@@ -12,7 +12,7 @@ const About = () => {
     <div style={{ background: "#e6e2d8", color: "#2e2c2a", fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: 16, lineHeight: 1.7 }}>
       <Navbar />
       {/* ABOUT */}
-      <section id="about" style={{ padding: "120px 60px", background: "#f0ede6", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="about-grid h-screen">
+      <section id="about" style={{ padding: "120px 60px", background: "#f0ede6", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start", minHeight: "auto" }} className="about-grid">
         <div>
           <ScrollReveal>
             <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>About Done Project Solutions</p>
@@ -102,7 +102,7 @@ const About = () => {
             <p style={{ fontSize: 15, color: "#7a7570", marginBottom: 24 }}>
               We work with select investment and development partners to evaluate opportunities, mitigate execution risk, and protect long-term value in complex projects.
             </p>
-            <a className="btn-primary" href="mailto:info@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
+            <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
           </div>
         </ScrollReveal>
       </section> */}
@@ -126,7 +126,7 @@ const About = () => {
           </ScrollReveal>
         </div>
         <ScrollReveal delay={2}>
-          <form style={{ display: "flex", flexDirection: "column", gap: 16 }} action="mailto:info@doneprojectsolutions.com" method="post" encType="text/plain">
+          <form style={{ display: "flex", flexDirection: "column", gap: 16 }} action="mailto:contactus@doneprojectsolutions.com" method="post" encType="text/plain">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="form-row-grid">
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 <label style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c" }}>First Name</label>
@@ -178,6 +178,7 @@ const About = () => {
           .hero-section { grid-template-columns: 1fr !important; padding: 120px 28px 60px !important; min-height: auto !important; }
           .hero-right-col { display: none !important; }
           .divider-grid, .section-header-grid, .service-grid-layout, .approach-grid, .about-grid, .contact-grid, .pillars-grid { grid-template-columns: 1fr !important; }
+          .about-grid { padding: 80px 28px 60px !important; gap: 48px !important; }
           .form-row-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

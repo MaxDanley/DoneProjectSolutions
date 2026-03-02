@@ -56,7 +56,7 @@ const Footer = () => {
               </li>
             ))}
             <li>
-              <a href="mailto:info@doneprojectsolutions.com?subject=Client%20Portal%20Access" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+              <a href="mailto:contactus@doneprojectsolutions.com?subject=Client%20Portal%20Access" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
               >
@@ -71,11 +71,11 @@ const Footer = () => {
           <h4 style={{ fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: "#4e7d8c", marginBottom: 20 }}>Contact</h4>
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
             <li>
-              <a href="mailto:info@doneprojectsolutions.com" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+              <a href="mailto:contactus@doneprojectsolutions.com" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
               >
-                info@doneprojectsolutions.com
+                contactus@doneprojectsolutions.com
               </a>
             </li>
             <li>
@@ -91,7 +91,7 @@ const Footer = () => {
             <h4 style={{ fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: "#4e7d8c", marginBottom: 12 }}>Client Access</h4>
             <ul style={{ listStyle: "none" }}>
               <li>
-                <a href="mailto:info@doneprojectsolutions.com?subject=Project%20Dashboard%20Login%20Request" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+                <a href="mailto:contactus@doneprojectsolutions.com?subject=Project%20Dashboard%20Login%20Request" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
                 >

@@ -48,7 +48,7 @@ const Invest = () => {
             <p style={{ fontSize: 15, color: "#7a7570", marginBottom: 24 }}>
               We work with select investment and development partners to evaluate opportunities, mitigate execution risk, and protect long-term value in complex projects.
             </p>
-            <a className="btn-primary" href="mailto:info@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
+            <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
           </div>
         </ScrollReveal>
       </section>
