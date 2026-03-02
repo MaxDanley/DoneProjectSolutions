@@ -59,7 +59,7 @@ const About = () => {
               </div>
             ))}
             <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(78,125,140,0.2)" }}>
-              <p style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 14 }}>Connect</p>
+              <p style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 14 }}>Connect with us</p>
               <a href="https://www.linkedin.com/in/bailey-fait-961496106/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#2e2c2a", textDecoration: "none", marginBottom: 8, transition: "color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#4e7d8c")} onMouseLeave={(e) => (e.currentTarget.style.color = "#2e2c2a")}>
                 <Linkedin size={18} strokeWidth={1.5} style={{ flexShrink: 0 }} />
                 Bailey Fait 
