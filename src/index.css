@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --beige: 37 22% 88%;
+    --beige-lt: 40 25% 93%;
+    --charcoal: 30 5% 16%;
+    --mid: 25 5% 45%;
+    --warm: 30 15% 74%;
+    --off-white: 36 33% 96%;
+    --accent: 196 28% 43%;
+    --accent-lt: 196 28% 43%;
+
+    --background: 37 22% 88%;
+    --foreground: 30 5% 16%;
+    --card: 40 25% 93%;
+    --card-foreground: 30 5% 16%;
+    --popover: 40 25% 93%;
+    --popover-foreground: 30 5% 16%;
+    --primary: 196 28% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 37 15% 82%;
+    --secondary-foreground: 30 5% 16%;
+    --muted: 37 15% 82%;
+    --muted-foreground: 25 5% 45%;
+    --accent-color: 196 28% 43%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 196 28% 43% / 0.18;
+    --input: 196 28% 43% / 0.28;
+    --ring: 196 28% 43%;
+    --radius: 0rem;
+
+    --sidebar-background: 37 22% 86%;
+    --sidebar-foreground: 30 5% 16%;
+    --sidebar-primary: 196 28% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 37 15% 82%;
+    --sidebar-accent-foreground: 30 5% 16%;
+    --sidebar-border: 37 15% 75%;
+    --sidebar-ring: 196 28% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.20s; }
+.reveal-delay-3 { transition-delay: 0.32s; }
+
+/* GLOBAL BUTTONS */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: hsl(var(--primary));
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.btn-primary:hover { background: #3c636f; }
+
+.btn-text {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-text:hover {
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary));
+}
