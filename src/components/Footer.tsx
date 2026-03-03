@@ -41,10 +41,11 @@ const Footer = () => {
             {[
               { label: "Home", to: "/" },
               { label: "Our Approach & Capabilities", to: "/#approach" },
-              { label: "Project Experience", to: "/#experience" },
-              { label: "About Us", to: "/#about" },
-              { label: "Stewardship", to: "/#stewardship" },
-              { label: "Invest With Our Partners", to: "/#invest" },
+              { label: "Project Experience", to: "/project-experience" },
+              { label: "Services", to: "/services" },
+              { label: "About Us", to: "/about" },
+              { label: "Stewardship", to: "/stewardship" },
+              { label: "Invest With Our Partners", to: "/invest" },
             ].map((item) => (
               <li key={item.label}>
                 <Link to={item.to} style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
@@ -55,14 +56,6 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
-            <li>
-              <a href="mailto:contactus@doneprojectsolutions.com?subject=Client%20Portal%20Access" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
-              >
-                Client Portal
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -87,19 +80,6 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div style={{ marginTop: 36 }}>
-            <h4 style={{ fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: "#4e7d8c", marginBottom: 12 }}>Client Access</h4>
-            <ul style={{ listStyle: "none" }}>
-              <li>
-                <a href="mailto:contactus@doneprojectsolutions.com?subject=Project%20Dashboard%20Login%20Request" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
-                >
-                  Project Dashboard Login →
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
