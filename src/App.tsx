@@ -11,6 +11,9 @@ import CustomDashboards from "./pages/CustomDashboards";
 import SchedulingResourceManagement from "./pages/SchedulingResourceManagement";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Invest from "./pages/Invest";
+import Stewardship from "./pages/Stewardship";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/invest" element={<Invest />} />
+          <Route path="/stewardship" element={<Stewardship />} />
           <Route path="/cost-management" element={<CostManagement />} />
           <Route path="/pre-construction" element={<PreConstruction />} />
           <Route path="/custom-dashboards" element={<CustomDashboards />} />

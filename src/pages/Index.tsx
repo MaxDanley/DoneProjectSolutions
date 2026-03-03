@@ -53,7 +53,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={3} immediate>
             <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
-              <a href="#contact" className="btn-primary">Get in Touch</a>
+              <a href="mailto:contactus@doneprojectsolutions.com" className="btn-primary">Get in Touch</a>
               <a href="#experience" className="btn-text">Our Services</a>
             </div>
           </ScrollReveal>
@@ -321,7 +321,7 @@ const Index = () => {
       </section>
 
       {/* ABOUT */}
-      <section id="about" style={{ padding: "120px 60px", background: "#f0ede6", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="about-grid">
+      {/* <section id="about" style={{ padding: "120px 60px", background: "#f0ede6", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="about-grid">
         <div>
           <ScrollReveal>
             <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>About Done Project Solutions</p>
@@ -343,7 +343,6 @@ const Index = () => {
             <a href="#about" className="btn-text">Learn More About Us</a>
           </ScrollReveal>
 
-          {/* Photo under about text */}
           <ScrollReveal delay={2}>
             <img src={completedBuildingImg} alt="Completed luxury building at dusk" style={{ width: "100%", height: 220, objectFit: "cover", marginTop: 40, opacity: 0.85 }} />
           </ScrollReveal>
@@ -368,10 +367,10 @@ const Index = () => {
             ))}
           </div>
         </ScrollReveal>
-      </section>
+      </section> */}
 
       {/* STEWARDSHIP */}
-      <section id="stewardship" style={{ padding: "100px 60px", background: "#2e2c2a", color: "#e6e2d8", position: "relative", overflow: "hidden" }}>
+      {/* <section id="stewardship" style={{ padding: "100px 60px", background: "#2e2c2a", color: "#e6e2d8", position: "relative", overflow: "hidden" }}>
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
           backgroundImage: "linear-gradient(rgba(78,125,140,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(78,125,140,0.10) 1px, transparent 1px)",
@@ -395,10 +394,10 @@ const Index = () => {
             <a href="#invest" className="btn-primary">Learn About Our Commitment</a>
           </ScrollReveal>
         </div>
-      </section>
+      </section> */}
 
       {/* INVEST */}
-      <section id="invest" style={{ padding: "100px 60px", background: "#faf8f5", borderTop: "1px solid rgba(78,125,140,0.14)", borderBottom: "1px solid rgba(78,125,140,0.10)" }}>
+      {/* <section id="invest" style={{ padding: "100px 60px", background: "#faf8f5", borderTop: "1px solid rgba(78,125,140,0.14)", borderBottom: "1px solid rgba(78,125,140,0.10)" }}>
         <ScrollReveal>
           <div style={{
             maxWidth: 920, margin: "0 auto", padding: 48, background: "#e6e2d8",
@@ -411,10 +410,10 @@ const Index = () => {
             <p style={{ fontSize: 15, color: "#7a7570", marginBottom: 24 }}>
               We work with select investment and development partners to evaluate opportunities, mitigate execution risk, and protect long-term value in complex projects.
             </p>
-            <a className="btn-primary" href="mailto:info@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
+            <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
           </div>
         </ScrollReveal>
-      </section>
+      </section> */}
 
       {/* CONTACT */}
       <section id="contact" style={{
@@ -436,7 +435,7 @@ const Index = () => {
           </ScrollReveal>
         </div>
         <ScrollReveal delay={2}>
-          <form style={{ display: "flex", flexDirection: "column", gap: 16 }} action="mailto:info@doneprojectsolutions.com" method="post" encType="text/plain">
+          <form style={{ display: "flex", flexDirection: "column", gap: 16 }} action="mailto:contactus@doneprojectsolutions.com" method="post" encType="text/plain">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="form-row-grid">
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 <label style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c" }}>First Name</label>
