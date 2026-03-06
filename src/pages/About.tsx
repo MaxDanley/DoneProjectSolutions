@@ -73,6 +73,61 @@ const About = () => {
         </ScrollReveal>
       </section>
 
+      {/* OUR CARRIER WORK */}
+      <section id="carrier-work" style={{ padding: "120px 60px", background: "#e6e2d8", borderTop: "1px solid rgba(78,125,140,0.14)" }}>
+        <div style={{ marginBottom: 64 }}>
+          <ScrollReveal>
+            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Our Carrier Work</p>
+          </ScrollReveal>
+          <ScrollReveal delay={1}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2, marginBottom: 28 }}>
+              Trusted partnerships across hospitality and aviation.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={2}>
+            <p style={{ fontSize: 15, color: "#7a7570", lineHeight: 1.8, maxWidth: 640 }}>
+              We have supported complex projects for leading carriers and hospitality brands — delivering owner representation, project advisory, and execution discipline at scale.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 2 }} className="carrier-work-grid">
+          {[
+            {
+              name: "Gaylord",
+              desc: "Serving as owner’s representative across multi-phase hospitality and convention destinations, including complex renovation and ground-up expansion programs. Our work has focused on aligning design, construction, and operator requirements while protecting guest experience, revenue continuity, and long-term asset value.",
+              img: "/gaylord.jfif",
+              reverse: false,
+            },
+            {
+              name: "Allegiant",
+              desc: "Supporting aviation and travel-related infrastructure initiatives with a focus on schedule reliability, budget discipline, and stakeholder coordination. Our role has included bridging capital planning, facilities, and delivery teams so that commercial, operational, and guest experience objectives stay aligned through execution.",
+              img: "/allegiant.jpg",
+              reverse: true,
+            },
+          ].map((carrier, i) => (
+            <ScrollReveal key={carrier.name} delay={Math.min(i, 2) as 0 | 1 | 2}>
+              <div
+                className={`flex flex-col md:flex-row gap-0 min-h-[280px] ${carrier.reverse ? "md:flex-row-reverse" : ""}`}
+                style={{
+                  background: "#f0ede6", borderLeft: "2px solid transparent", transition: "background 0.25s, border-color 0.25s", cursor: "default", overflow: "hidden",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#faf8f5"; e.currentTarget.style.borderLeftColor = "#4e7d8c"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "#f0ede6"; e.currentTarget.style.borderLeftColor = "transparent"; }}
+              >
+                <div className="flex-1 min-w-0 shrink-0 md:min-w-[320px]">
+                  <img src={carrier.img} alt={`${carrier.name} project`} className="w-full h-full min-h-[240px] md:min-h-[280px] object-cover opacity-90 block" />
+                </div>
+                <div className="flex-1 flex flex-col justify-center" style={{ padding: "48px 56px" }}>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, lineHeight: 1.2, marginBottom: 14, color: "#2e2c2a" }}>{carrier.name}</h3>
+                  <p style={{ fontSize: 14, color: "#7a7570", lineHeight: 1.75 }}>{carrier.desc}</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
       {/* STEWARDSHIP */}
       {/* <section id="stewardship" style={{ padding: "100px 60px", background: "#2e2c2a", color: "#e6e2d8", position: "relative", overflow: "hidden" }}>
         <div style={{
@@ -189,8 +244,9 @@ const About = () => {
         @media (max-width: 900px) {
           .hero-section { grid-template-columns: 1fr !important; padding: 120px 28px 60px !important; min-height: auto !important; }
           .hero-right-col { display: none !important; }
-          .divider-grid, .section-header-grid, .service-grid-layout, .approach-grid, .about-grid, .contact-grid, .pillars-grid { grid-template-columns: 1fr !important; }
+          .divider-grid, .section-header-grid, .service-grid-layout, .approach-grid, .about-grid, .contact-grid, .pillars-grid, .carrier-work-grid { grid-template-columns: 1fr !important; }
           .about-grid { padding: 80px 28px 60px !important; gap: 48px !important; }
+          #carrier-work { padding: 80px 28px 60px !important; }
           .form-row-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
