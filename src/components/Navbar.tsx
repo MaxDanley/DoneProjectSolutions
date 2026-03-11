@@ -46,18 +46,19 @@ const Navbar = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: scrolled ? "18px 60px" : "28px 60px",
-        background: scrolled ? "rgba(230,226,216,0.96)" : "transparent",
-        backdropFilter: scrolled ? "blur(10px)" : "none",
-        transition: "background 0.4s ease, padding 0.4s ease",
-        borderBottom: scrolled ? "1px solid rgba(78,125,140,0.14)" : "none",
+        padding: scrolled ? "18px 60px" : "26px 60px",
+        background: scrolled ? "rgba(230,226,216,0.98)" : "rgba(230,226,216,0.94)",
+        backdropFilter: "blur(14px)",
+        transition: "background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease",
+        borderBottom: "1px solid rgba(78,125,140,0.14)",
+        boxShadow: scrolled ? "0 10px 30px rgba(46,44,42,0.18)" : "0 6px 18px rgba(46,44,42,0.10)",
       }}
     >
       <Link to="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1.1, textDecoration: "none", color: "#2e2c2a" }}>
-        <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: 22, letterSpacing: "-0.5px" }}>
+        <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 24, letterSpacing: "-0.5px" }}>
           done<span style={{ color: "#4e7d8c" }}>.</span>
         </span>
-        <span style={{ fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase" as const, color: "#7a7570", marginTop: 1 }}>
+        <span style={{ fontSize: 10, letterSpacing: "2.5px", textTransform: "uppercase" as const, color: "#7a7570", marginTop: 3 }}>
           Project Solutions
         </span>
       </Link>
