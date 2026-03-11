@@ -36,19 +36,19 @@ const Index = () => {
 
         <div style={{ paddingTop: 140, alignSelf: "center", position: "relative", zIndex: 2 }}>
           <ScrollReveal immediate>
-            <p style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 36, display: "flex", alignItems: "center", gap: 14 }}>
+            <p style={{ fontSize: 14, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 36, display: "flex", alignItems: "center", gap: 14 }}>
               <span style={{ display: "block", width: 32, height: 1, background: "#4e7d8c" }} />
-              Owner's Representation &amp; Project Advisory
+              Development &amp; Construction Management
             </p>
           </ScrollReveal>
           <ScrollReveal delay={1} immediate>
             <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 300, fontSize: "clamp(42px, 5.5vw, 72px)", lineHeight: 1.12, letterSpacing: "-0.5px", color: "#2e2c2a", marginBottom: 40, maxWidth: 560 }}>
-              Bringing <em style={{ fontStyle: "italic", color: "#4e7d8c" }}>clarity</em> and momentum to complex construction projects.
+              Bringing <em style={{ fontStyle: "italic", color: "#4e7d8c" }}>clarity</em> and momentum to your development and construction projects.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2} immediate>
-            <p style={{ fontSize: 15, color: "#7a7570", lineHeight: 1.75, maxWidth: 420, marginBottom: 52 }}>
-              We partner with owners and developers to proactively manage risk, align teams, and move projects forward — from early evaluation through construction.
+            <p style={{ fontSize: 18, color: "#7a7570", lineHeight: 1.75, maxWidth: 420, marginBottom: 52 }}>
+              We partner with owners and developers to proactively manage risk, align teams, and move projects forward  from early evaluation through construction.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={3} immediate>
@@ -58,7 +58,7 @@ const Index = () => {
             </div>
           </ScrollReveal>
         </div>
-
+{/* 
         <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", paddingTop: 120, position: "relative", zIndex: 2 }} className="hero-right-col">
           <ScrollReveal delay={2} immediate>
             <div style={{
@@ -80,18 +80,18 @@ const Index = () => {
                     padding: "13px 0", borderBottom: i < arr.length - 1 ? "1px solid rgba(122,117,112,0.15)" : "none",
                     display: "flex", alignItems: "center", gap: 14,
                   }}>
-                    <span style={{ color: "#4e7d8c", fontSize: 14, flexShrink: 0 }}>—</span>
+                    <span style={{ color: "#4e7d8c", fontSize: 14, flexShrink: 0 }}></span>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
           </ScrollReveal>
-        </div>
+        </div> */}
       </section>
 
       {/* DIVIDER */}
-      <div style={{
+      {/* <div style={{
         padding: "70px 60px",
         borderTop: "1px solid rgba(78,125,140,0.18)",
         borderBottom: "1px solid rgba(78,125,140,0.10)",
@@ -106,10 +106,10 @@ const Index = () => {
             Complex projects don't struggle from a lack of effort.<br />They struggle from a lack of alignment.
           </p>
         </ScrollReveal>
-      </div>
+      </div> */}
 
       {/* TENSION */}
-      <section style={{
+      {/* <section style={{
         padding: "100px 60px", background: "#2e2c2a", color: "#e6e2d8", position: "relative", overflow: "hidden",
       }}>
         <div style={{
@@ -123,16 +123,15 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.2, marginBottom: 32 }}>
-              When budgets, schedules, teams, and decisions drift out of sync — even well-intentioned projects lose momentum.
+              When budgets, schedules, teams, and decisions drift out of sync  even well-intentioned projects lose momentum.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <p style={{ fontSize: 15, color: "rgba(230,226,216,0.58)", lineHeight: 1.85, maxWidth: 640, marginBottom: 64 }}>
-              We step in to bring structure, accountability, and focus — helping ownership teams make informed decisions and keep projects moving. Our role adapts to the needs of each project, but our focus is consistent: clear decisions, disciplined execution, and fewer surprises.
+              We step in to bring structure, accountability, and focus  helping ownership teams make informed decisions and keep projects moving. Our role adapts to the needs of each project, but our focus is consistent: clear decisions, disciplined execution, and fewer surprises.
             </p>
           </ScrollReveal>
 
-          {/* Photo accent */}
           <div style={{ marginBottom: 64, maxWidth: 640 }}>
             <img src={teamPlanningImg} alt="Team reviewing construction plans" style={{ width: "100%", height: 240, objectFit: "cover", opacity: 0.7, filter: "grayscale(30%)" }} />
           </div>
@@ -158,10 +157,10 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SERVICES BAR */}
-      <div style={{
+      {/* <div style={{
         padding: "36px 60px", borderTop: "1px solid rgba(78,125,140,0.14)", borderBottom: "1px solid rgba(78,125,140,0.10)",
         background: "#e6e2d8", display: "flex", alignItems: "center", overflowX: "auto",
       }}>
@@ -184,10 +183,10 @@ const Index = () => {
             {s.label}
           </Link>
         ))}
-      </div>
+      </div> */}
 
       {/* SERVICES OVERVIEW */}
-      <section id="experience" style={{ padding: "120px 60px", background: "#f0ede6", borderTop: "1px solid rgba(78,125,140,0.14)", borderBottom: "1px solid rgba(78,125,140,0.10)" }}>
+      {/* <section id="experience" style={{ padding: "120px 60px", background: "#f0ede6", borderTop: "1px solid rgba(78,125,140,0.14)", borderBottom: "1px solid rgba(78,125,140,0.10)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginBottom: 80, alignItems: "end" }} className="section-header-grid">
           <div>
             <ScrollReveal>
@@ -241,7 +240,7 @@ const Index = () => {
                 <ul style={{ listStyle: "none", marginBottom: 26 }}>
                   {service.items.map((item) => (
                     <li key={item} style={{ fontSize: 13, color: "#2e2c2a", padding: "4px 0", display: "flex", alignItems: "center", gap: 10 }}>
-                      <span style={{ color: "#4e7d8c" }}>—</span> {item}
+                      <span style={{ color: "#4e7d8c" }}></span> {item}
                     </li>
                   ))}
                 </ul>
@@ -250,7 +249,7 @@ const Index = () => {
             </ScrollReveal>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* APPROACH */}
       <section id="approach" style={{ padding: "120px 60px", background: "#f0ede6" }}>
@@ -261,7 +260,7 @@ const Index = () => {
             </ScrollReveal>
             <ScrollReveal delay={1}>
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2 }}>
-                Every project is different — but most break down in familiar ways.
+                Every project is different  but most break down in familiar ways.
               </h2>
             </ScrollReveal>
           </div>
@@ -275,24 +274,26 @@ const Index = () => {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 2 }} className="approach-grid">
           {[
             { num: "01", title: "Early Project Evaluation", text: "Grounding projects in realistic cost, schedule, and risk expectations before commitments are made. We help you understand what you're getting into before you're in it." },
-            { num: "02", title: "Project Definition & Due Diligence", text: "Defining scope, aligning stakeholders, and surfacing risks early — so that decision-making is informed and the project starts on solid footing." },
-            { num: "03", title: "Pre-Construction & Team Alignment", text: "Coordinating design, procurement, and contractor selection with disciplined oversight — ensuring cost, schedule, and intent stay aligned before construction begins." },
-            { num: "04", title: "Construction-Phase Owner Representation", text: "Serving as an experienced extension of the ownership team through delivery — protecting interests, resolving issues, and keeping the project on track." },
+            { num: "02", title: "Project Definition & Due Diligence", text: "Defining scope, aligning stakeholders, and surfacing risks early  so that decision-making is informed and the project starts on solid footing." },
+            { num: "03", title: "Pre-Construction & Team Alignment", text: "Coordinating design, procurement, and contractor selection with disciplined oversight  ensuring cost, schedule, and intent stay aligned before construction begins." },
+            { num: "04", title: "Construction-Phase Owner Representation", text: "Serving as an experienced extension of the ownership team through delivery  protecting interests, resolving issues, and keeping the project on track." },
           ].map((item, i) => (
             <ScrollReveal key={item.num} delay={Math.min(i, 2) as 0 | 1 | 2}>
-              <div style={{
-                background: "#e6e2d8", padding: "52px 48px", display: "grid", gridTemplateColumns: "40px 1fr", gap: 28, alignItems: "start",
-                borderLeft: "2px solid transparent", transition: "background 0.25s, border-color 0.25s",
-              }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "#faf8f5"; e.currentTarget.style.borderLeftColor = "#4e7d8c"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "#e6e2d8"; e.currentTarget.style.borderLeftColor = "transparent"; }}
-              >
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, letterSpacing: 1, color: "#4e7d8c", paddingTop: 6 }}>{item.num}</span>
-                <div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 500, marginBottom: 14, lineHeight: 1.2 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: "#7a7570", lineHeight: 1.75 }}>{item.text}</p>
+              <Link to="/services" style={{ textDecoration: "none", color: "inherit" }}>
+                <div style={{
+                  background: "#e6e2d8", padding: "52px 48px", display: "grid", gridTemplateColumns: "40px 1fr", gap: 28, alignItems: "start",
+                  borderLeft: "2px solid transparent", transition: "background 0.25s, border-color 0.25s",
+                }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "#faf8f5"; e.currentTarget.style.borderLeftColor = "#4e7d8c"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "#e6e2d8"; e.currentTarget.style.borderLeftColor = "transparent"; }}
+                >
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, letterSpacing: 1, color: "#4e7d8c", paddingTop: 6 }}>{item.num}</span>
+                  <div>
+                    <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 500, marginBottom: 14, lineHeight: 1.2 }}>{item.title}</h3>
+                    <p style={{ fontSize: 14, color: "#7a7570", lineHeight: 1.75 }}>{item.text}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
@@ -305,115 +306,20 @@ const Index = () => {
 
         <div style={{ maxWidth: 820, position: "relative", zIndex: 1 }}>
           <ScrollReveal>
-            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Our Belief</p>
+            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Testimonial</p>
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 300, lineHeight: 1.35, marginBottom: 48 }}>
-              "Projects succeed when they are <em style={{ fontStyle: "italic", color: "#4e7d8c" }}>proactively managed</em> — not just coordinated."
+              "If you want to feel the perfect combination of comfort, empowerment &amp; expertise, I highly recommend bringing Done. Project Solutions onto your project."
             </p>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <a href="#approach" style={{ display: "inline-flex", alignItems: "center", gap: 14, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", textDecoration: "none", color: "#4e7d8c" }}>
-              View Our Approach →
-            </a>
+            <p style={{ fontSize: 13, letterSpacing: 1.5, textTransform: "uppercase", color: "#7a7570" }}>
+              — Principal / Co-Founder, Everwood Reserve
+            </p>
           </ScrollReveal>
         </div>
       </section>
-
-      {/* ABOUT */}
-      {/* <section id="about" style={{ padding: "120px 60px", background: "#f0ede6", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="about-grid">
-        <div>
-          <ScrollReveal>
-            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>About Done Project Solutions</p>
-          </ScrollReveal>
-          <ScrollReveal delay={1}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2, marginBottom: 28 }}>
-              Boutique. Selective. Senior-Led.
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={2}>
-            <p style={{ fontSize: 15, color: "#7a7570", lineHeight: 1.8, marginBottom: 28 }}>
-              Done Project Solutions was formed around a simple belief: projects perform better when experienced leaders stay close to the work.
-            </p>
-            <p style={{ fontSize: 15, color: "#7a7570", lineHeight: 1.8, marginBottom: 40 }}>
-              Our standards were shaped on large, complex projects where accountability, clarity, and execution discipline were non-negotiable. We operate as a boutique firm by design — selective in our partnerships and focused on where our involvement creates meaningful value.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={3}>
-            <a href="#about" className="btn-text">Learn More About Us</a>
-          </ScrollReveal>
-
-          <ScrollReveal delay={2}>
-            <img src={completedBuildingImg} alt="Completed luxury building at dusk" style={{ width: "100%", height: 220, objectFit: "cover", marginTop: 40, opacity: 0.85 }} />
-          </ScrollReveal>
-        </div>
-
-        <ScrollReveal delay={2}>
-          <div>
-            {[
-              { number: "$4B+", label: "Construction Value Supported", style: {} },
-              { number: "Boutique by Design", label: "Selective Partnerships Only", style: { fontSize: 26, fontStyle: "italic" } },
-              { number: "Hospitality · Multifamily\nTechnically Complex Development", label: "Primary Project Sectors", style: { fontSize: 20, fontStyle: "italic", lineHeight: 1.4 } },
-            ].map((stat) => (
-              <div key={stat.label} style={{
-                padding: "36px 40px", borderLeft: "3px solid #4e7d8c", background: "#e6e2d8", marginBottom: 2, transition: "background 0.25s",
-              }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#faf8f5")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#e6e2d8")}
-              >
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 40, color: "#2e2c2a", fontWeight: 300, whiteSpace: "pre-line", ...stat.style }}>{stat.number}</p>
-                <p style={{ fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", color: "#4e7d8c", marginTop: stat.label === "Primary Project Sectors" ? 12 : 6 }}>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-      </section> */}
-
-      {/* STEWARDSHIP */}
-      {/* <section id="stewardship" style={{ padding: "100px 60px", background: "#2e2c2a", color: "#e6e2d8", position: "relative", overflow: "hidden" }}>
-        <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          backgroundImage: "linear-gradient(rgba(78,125,140,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(78,125,140,0.10) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-          <ScrollReveal>
-            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 32 }}>Stewardship</p>
-          </ScrollReveal>
-          <ScrollReveal delay={1}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: 300, lineHeight: 1.3, marginBottom: 28 }}>
-              We believe our work, time, and resources are entrusted to us by God.
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={2}>
-            <p style={{ fontSize: 15, color: "rgba(230,226,216,0.55)", lineHeight: 1.8, marginBottom: 48 }}>
-              As part of that responsibility, we commit a portion of our revenue and time to serving organizations creating meaningful, long-term community impact — including faith-aligned organizations, community and mission-driven facilities, and groups needing planning or execution support.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={3}>
-            <a href="#invest" className="btn-primary">Learn About Our Commitment</a>
-          </ScrollReveal>
-        </div>
-      </section> */}
-
-      {/* INVEST */}
-      {/* <section id="invest" style={{ padding: "100px 60px", background: "#faf8f5", borderTop: "1px solid rgba(78,125,140,0.14)", borderBottom: "1px solid rgba(78,125,140,0.10)" }}>
-        <ScrollReveal>
-          <div style={{
-            maxWidth: 920, margin: "0 auto", padding: 48, background: "#e6e2d8",
-            borderLeft: "3px solid #4e7d8c", boxShadow: "0 8px 30px rgba(46,44,42,0.06)",
-          }}>
-            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Invest With Our Partners</p>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2, marginBottom: 16 }}>
-              Strategic development opportunities for aligned partners.
-            </h2>
-            <p style={{ fontSize: 15, color: "#7a7570", marginBottom: 24 }}>
-              We work with select investment and development partners to evaluate opportunities, mitigate execution risk, and protect long-term value in complex projects.
-            </p>
-            <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com?subject=Invest%20With%20Done%20Project%20Solutions">Request Investment Information</a>
-          </div>
-        </ScrollReveal>
-      </section> */}
 
       {/* CONTACT */}
       <section id="contact" style={{
@@ -426,7 +332,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(30px, 3vw, 42px)", fontWeight: 300, lineHeight: 1.25 }}>
-              If you're navigating a complex project and want an experienced partner at the table — we should talk.
+              If you're exploring a development or construction project and want an experienced, owner-first partner at the table - we should talk.
             </h2>
           </ScrollReveal>
           {/* Photo accent in contact */}
@@ -468,7 +374,7 @@ const Index = () => {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
               <label style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#4e7d8c" }}>Tell us about your project</label>
-              <textarea name="project_notes" placeholder="A brief overview — we'll take it from there." style={{
+              <textarea name="project_notes" placeholder="A brief overview  we'll take it from there." style={{
                 background: "none", border: "none", borderBottom: "1px solid rgba(78,125,140,0.28)", padding: "10px 0",
                 fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 300, color: "#2e2c2a", outline: "none", resize: "none", height: 90, width: "100%",
               }} />
