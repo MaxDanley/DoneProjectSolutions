@@ -52,13 +52,12 @@ const ProcessDetailSection = ({
         <div key={group.groupTitle} style={{ marginBottom: 24 }}>
           <h4
             style={{
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "2px",
+              fontSize: 9,
+              fontWeight: 400,
+              letterSpacing: 3,
               textTransform: "uppercase" as const,
-              color: "#2a4d56",
-              marginBottom: 12,
-              marginLeft: 8,
+              color: "#4e7d8c",
+              marginBottom: 16,
             }}
           >
             {group.groupTitle}
@@ -77,49 +76,39 @@ const ProcessDetailSection = ({
     ))
   );
   return (
-    <section className={className} style={{ marginTop: 0, marginBottom: 0, background: "#f0ede6" }}>
+    <section className={className} style={{ marginTop: 0, marginBottom: 0, background: "#f0ede6", borderTop: "1px solid rgba(78,125,140,0.14)" }}>
       <ProcessDetailHeader title={sectionTitle} />
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gap: 32,
+          gap: 2,
           maxWidth: 1200,
           margin: "0 auto",
           paddingLeft: 60,
           paddingRight: 60,
+          paddingBottom: 60,
           background: "#f0ede6",
           alignItems: "start",
         }}
         className="process-detail-grid"
       >
-        {/* Left column: engagement + price inside a box */}
+        {/* Left column: engagement + price */}
         <div
           className="process-detail-left-box"
           style={{
             display: "flex",
             flexDirection: "column",
-            overflow: "hidden",
             background: "#faf8f5",
-            border: "1px solid rgba(46,44,42,0.12)",
-            borderRadius: 4,
-            paddingLeft: 20,
-            paddingRight: 20,
-            paddingBottom: 20,
-            paddingTop: 16,
-            marginLeft: 8,
-            marginRight: 8,
-            marginTop: 8,
-            marginBottom: 8,
           }}
         >
           <EngagementCard title={engagementTitle}>{engagementContent}</EngagementCard>
-          <div className="process-detail-price-wrap" style={{ marginTop: 0, marginBottom: 12 }}>
+          <div className="process-detail-price-wrap">
             <PriceCard amount={priceAmount} note={priceNote} noteLines={priceNoteLines} />
           </div>
         </div>
         {/* Right column: deliverable cards or grouped cards */}
-        <div className="process-detail-right-col" style={{ display: "flex", flexDirection: "column", paddingBottom: 24, marginLeft: 8, marginRight: 8, marginTop: 8, marginBottom: 8 }}>
+        <div className="process-detail-right-col" style={{ display: "flex", flexDirection: "column", paddingTop: 32, paddingBottom: 32 }}>
           {rightContent}
         </div>
       </div>

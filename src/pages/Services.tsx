@@ -199,58 +199,59 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Phase cards - first card base teal, then progressively darker */}
-      <section style={{ padding: "100px 60px 32px", background: "#f0ede6" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto 64px", textAlign: "center" }}>
-          <ScrollReveal delay={1}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2, color: "#2e2c2a", marginBottom: 16 }}>
-              OUR PROCESS
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={2}>
-            <p style={{ fontSize: 15, color: "#7a7570", lineHeight: 1.7, maxWidth: 560, margin: "0 auto" }}>
-              A seamless, owner-first approach from concept to keys.
-            </p>
-          </ScrollReveal>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, maxWidth: 1200, margin: "0 auto" }} className="services-all-grid">
-          {phaseCards.map((card, i) => {
-            const cardBg = ["#4e7d8c", "#426d7a", "#365d68", "#2a4d56"][i];
-            return (
-            <ScrollReveal key={card.num} delay={Math.min(i, 2) as 0 | 1 | 2}>
-              <div
-                className="phase-card"
-                style={{
-                  background: cardBg,
-                  color: "#e6e2d8",
-                  padding: "36px 28px 40px",
-                  height: 520,
-                  display: "flex",
-                  flexDirection: "column",
-                  boxShadow: "0 8px 24px rgba(46,44,42,0.1)",
-                }}
-              >
-                <div className="phase-card-header" style={{ height: 140, flexShrink: 0, display: "flex", flexDirection: "column" }}>
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 48, fontWeight: 300, lineHeight: 1, marginBottom: 16, color: "#e6e2d8", textAlign: "center" }}>
-                    {card.num}
-                  </p>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 600, lineHeight: 1.25, marginBottom: 0, color: "#e6e2d8", textAlign: "center" }}>
+      {/* OUR PROCESS */}
+      <section style={{ padding: "100px 60px", background: "#2e2c2a", color: "#e6e2d8", position: "relative", overflow: "hidden" }}>
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          backgroundImage: "linear-gradient(rgba(78,125,140,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(78,125,140,0.10) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }} />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginBottom: 80, alignItems: "end" }} className="section-header-grid">
+            <div>
+              <ScrollReveal>
+                <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Our Process</p>
+              </ScrollReveal>
+              <ScrollReveal delay={1}>
+                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2, color: "#e6e2d8" }}>
+                  A seamless, owner-first approach — from concept to keys.
+                </h2>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal delay={2}>
+              <p style={{ fontSize: 15, color: "rgba(230,226,216,0.55)", lineHeight: 1.8 }}>
+                Every engagement follows the same disciplined path. We stay close to the work at every phase so nothing drifts, nothing surprises, and ownership always has a clear picture.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(78,125,140,0.18)" }} className="process-phases-grid">
+            {phaseCards.map((card, i) => (
+              <ScrollReveal key={card.num} delay={Math.min(i, 2) as 0 | 1 | 2} className="h-full">
+                <div
+                  style={{
+                    background: "#2e2c2a", padding: "44px 36px", borderTop: "2px solid #4e7d8c",
+                    transition: "background 0.3s", cursor: "default", height: "100%",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(78,125,140,0.08)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "#2e2c2a")}
+                >
+                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 11, letterSpacing: 2, color: "#4e7d8c", marginBottom: 20 }}>{card.num}</p>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "#e6e2d8", marginBottom: 24, lineHeight: 1.25 }}>
                     {card.title}
                   </h3>
+                  <ul style={{ listStyle: "none" }}>
+                    {card.items.map((item) => (
+                      <li key={item} style={{ fontSize: 13, color: "rgba(230,226,216,0.48)", padding: "5px 0", display: "flex", alignItems: "flex-start", gap: 8, lineHeight: 1.4 }}>
+                        <span style={{ color: "#4e7d8c", flexShrink: 0 }}>—</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="phase-card-divider" style={{ width: "90%", minHeight: 2, height: 2, flexShrink: 0, background: "rgba(230,226,216,0.4)", marginTop: 20, marginBottom: 24, alignSelf: "center" }} aria-hidden />
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1 }}>
-                  {card.items.map((item) => (
-                    <li key={item} style={{ fontSize: 13, color: "rgba(230,226,216,0.92)", padding: "6px 0", display: "flex", alignItems: "flex-start", gap: 8, lineHeight: 1.4 }}>
-                      <span style={{ color: "rgba(230,226,216,0.7)", flexShrink: 0 }}>—</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          );
-          })}
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -412,17 +413,9 @@ const Services = () => {
       <Footer />
 
       <style>{`
-        .phase-card .phase-card-divider {
-          display: block !important;
-          min-height: 2px;
-        }
         @media (max-width: 900px) {
-          .services-all-grid {
+          .services-all-grid, .process-phases-grid, .section-header-grid {
             grid-template-columns: 1fr !important;
-          }
-          .phase-card {
-            height: auto !important;
-            min-height: 420px !important;
           }
           .fee-structure-grid {
             grid-template-columns: 1fr !important;

@@ -1,7 +1,5 @@
 interface ProcessDetailHeaderProps {
-  /** Section title (e.g. "DUE DILIGENCE") */
   title: string;
-  /** Optional class name for the root element */
   className?: string;
 }
 
@@ -10,9 +8,8 @@ const ProcessDetailHeader = ({ title, className = "" }: ProcessDetailHeaderProps
     <header
       className={className}
       style={{
-        padding: "12px 0 16px",
+        padding: "64px 0 0",
         background: "transparent",
-        color: "#2e2c2a",
       }}
     >
       <div
@@ -22,19 +19,32 @@ const ProcessDetailHeader = ({ title, className = "" }: ProcessDetailHeaderProps
           margin: "0 auto",
           paddingLeft: 60,
           paddingRight: 60,
+          paddingBottom: 40,
+          borderBottom: "1px solid rgba(78,125,140,0.14)",
         }}
       >
-        <span
+        <p
+          style={{
+            fontSize: 9,
+            letterSpacing: 3,
+            textTransform: "uppercase" as const,
+            color: "#4e7d8c",
+            marginBottom: 20,
+          }}
+        >
+          Phase
+        </p>
+        <h2
           style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(28px, 3.5vw, 42px)",
-            fontWeight: 600,
-            letterSpacing: "2px",
-            textTransform: "uppercase" as const,
+            fontSize: "clamp(32px, 3.5vw, 48px)",
+            fontWeight: 300,
+            lineHeight: 1.2,
+            color: "#2e2c2a",
           }}
         >
           {title}
-        </span>
+        </h2>
       </div>
       <style>{`
         @media (max-width: 900px) {
