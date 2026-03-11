@@ -73,54 +73,115 @@ const About = () => {
         </ScrollReveal>
       </section>
 
-      {/* OUR CARRIER WORK */}
+      {/* SELECTED PROJECTS */}
       <section id="carrier-work" style={{ padding: "120px 60px", background: "#e6e2d8", borderTop: "1px solid rgba(78,125,140,0.14)" }}>
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 40 }}>
           <ScrollReveal>
-            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Our Carrier Work</p>
+            <p style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "#4e7d8c", marginBottom: 24 }}>Selected Projects</p>
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.2, marginBottom: 28 }}>
-              Trusted partnerships across hospitality and aviation.
+              The projects we have been involved with.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <p style={{ fontSize: 15, color: "#7a7570", lineHeight: 1.8, maxWidth: 640 }}>
-              We have supported complex projects for leading carriers and hospitality brands — delivering owner representation, project advisory, and execution discipline at scale.
+              Representative hospitality, multifamily, stadium, and senior living work where we have provided planning, advisory, or delivery support.
             </p>
           </ScrollReveal>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 2 }} className="carrier-work-grid">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: 2,
+          }}
+          className="carrier-work-grid"
+        >
           {[
             {
-              name: "Gaylord",
-              desc: "Serving as owner’s representative across multi-phase hospitality and convention destinations, including complex renovation and ground-up expansion programs. Our work has focused on aligning design, construction, and operator requirements while protecting guest experience, revenue continuity, and long-term asset value.",
-              img: "/gaylord.jfif",
-              reverse: false,
+              name: "Gaylord Pacific Hotel & Convention Center – Chula Vista, CA",
+              img: "/Gaylord Pacific Hotel & Convention Center – Chula Vista, CA.jfif",
             },
             {
-              name: "Allegiant",
-              desc: "Supporting aviation and travel-related infrastructure initiatives with a focus on schedule reliability, budget discipline, and stakeholder coordination. Our role has included bridging capital planning, facilities, and delivery teams so that commercial, operational, and guest experience objectives stay aligned through execution.",
+              name: "Allegiant Stadium – Las Vegas, NV",
               img: "/allegiant.jpg",
-              reverse: true,
             },
-          ].map((carrier, i) => (
-            <ScrollReveal key={carrier.name} delay={Math.min(i, 2) as 0 | 1 | 2}>
+            {
+              name: "Geodis Park MLS Stadium – Nashville, TN",
+              img: "/Geodis Park MLS Stadium – Nashville, TN.jpeg",
+            },
+            {
+              name: "St. Louis MLS Stadium – St. Louis, MO",
+              img: "/St. Louis MLS Stadium – St. Louis, MO.png",
+            },
+            {
+              name: "Everwood Reserve Luxury Assisted Living Facility – TX",
+              img: "/Everwood Reserve Luxury Assisted Living Facility – TX.jpg",
+            },
+            {
+              name: "Multi-Family Build – San Diego, CA",
+              img: "/Multi-Family Build – San Diego, CA.png",
+            },
+            {
+              name: "100-Key Boutique Hotel – CO",
+              img: "/100-Key Boutique Hotel – CO.png",
+            },
+            {
+              name: "44-Key Boutique Hotel",
+              img: "/44-Key-Boutique-hotel.png",
+            },
+            {
+              name: "30-Key Boutique Hotel/Hostel – Los Angeles, CA",
+              img: "/30-Key Boutique HotelHostel – Los Angeles, CA.png",
+            },
+          ].map((project, i) => (
+            <ScrollReveal key={project.name} delay={Math.min(i, 2) as 0 | 1 | 2}>
               <div
-                className={`flex flex-col md:flex-row gap-0 min-h-[280px] ${carrier.reverse ? "md:flex-row-reverse" : ""}`}
                 style={{
-                  background: "#f0ede6", borderLeft: "2px solid transparent", transition: "background 0.25s, border-color 0.25s", cursor: "default", overflow: "hidden",
+                  background: "#f0ede6",
+                  borderLeft: "2px solid transparent",
+                  transition: "background 0.25s, border-color 0.25s",
+                  cursor: "default",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "#faf8f5"; e.currentTarget.style.borderLeftColor = "#4e7d8c"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "#f0ede6"; e.currentTarget.style.borderLeftColor = "transparent"; }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#faf8f5";
+                  e.currentTarget.style.borderLeftColor = "#4e7d8c";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "#f0ede6";
+                  e.currentTarget.style.borderLeftColor = "transparent";
+                }}
               >
-                <div className="flex-1 min-w-0 shrink-0 md:min-w-[320px]">
-                  <img src={carrier.img} alt={`${carrier.name} project`} className="w-full h-full min-h-[240px] md:min-h-[280px] object-cover opacity-90 block" />
+                <div style={{ width: "100%", height: 240, overflow: "hidden" }}>
+                  <img
+                    src={project.img}
+                    alt={project.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      display: "block",
+                    }}
+                  />
                 </div>
-                <div className="flex-1 flex flex-col justify-center" style={{ padding: "48px 56px" }}>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, lineHeight: 1.2, marginBottom: 14, color: "#2e2c2a" }}>{carrier.name}</h3>
-                  <p style={{ fontSize: 14, color: "#7a7570", lineHeight: 1.75 }}>{carrier.desc}</p>
+                <div style={{ padding: "20px 24px 22px" }}>
+                  <p
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 18,
+                      fontWeight: 400,
+                      lineHeight: 1.4,
+                      color: "#2e2c2a",
+                    }}
+                  >
+                    {project.name}
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
