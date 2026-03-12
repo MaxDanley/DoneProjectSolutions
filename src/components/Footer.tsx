@@ -40,11 +40,10 @@ const Footer = () => {
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
             {[
               { label: "Home", to: "/" },
-              { label: "Our Approach & Capabilities", to: "/#approach" },
-              { label: "Project Experience", to: "/#experience" },
-              { label: "About Us", to: "/#about" },
-              { label: "Stewardship", to: "/#stewardship" },
-              { label: "Invest With Our Partners", to: "/#invest" },
+              { label: "Services", to: "/services" },
+              { label: "About Us", to: "/about" },
+              { label: "Stewardship", to: "/stewardship" },
+              { label: "Invest With Our Partners", to: "/invest" },
             ].map((item) => (
               <li key={item.label}>
                 <Link to={item.to} style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
