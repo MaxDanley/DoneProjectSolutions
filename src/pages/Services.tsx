@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ProcessDetailSection } from "@/components/ProcessDetail";
 import type { DeliverableItem, DeliverableGroup } from "@/components/ProcessDetail";
-import heroHomeImg from "@/assets/hero-home.jpg";
+import heroHomeImg from "@/assets/hero-home.png";
 
 /** Reusable data shape for process detail sections (Due Diligence, Pre-Construction, etc.) */
 const dueDiligenceData = {
@@ -406,7 +406,7 @@ const Services = () => {
       <section style={{ padding: "80px 60px", background: "#e6e2d8", borderTop: "1px solid rgba(78,125,140,0.12)" }}>
         <div style={{ maxWidth: 920, margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center", gap: 16 }} className="cta-band-inner">
           <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com">Get in Touch</a>
-          <a href="mailto:contactus@doneprojectsolutions.com" className="btn-text">Send Message</a>
+          {/* <a href="mailto:contactus@doneprojectsolutions.com" className="btn-text">Send Message</a> */}
         </div>
       </section>
 
