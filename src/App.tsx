@@ -10,7 +10,6 @@ import PreConstruction from "./pages/PreConstruction";
 import CustomDashboards from "./pages/CustomDashboards";
 import SchedulingResourceManagement from "./pages/SchedulingResourceManagement";
 import Services from "./pages/Services";
-import ProjectExperience from "./pages/ProjectExperience";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import Invest from "./pages/Invest";
@@ -28,7 +27,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/project-experience" element={<ProjectExperience />} />
           <Route path="/about" element={<About />} />
           <Route path="/invest" element={<Invest />} />
           <Route path="/stewardship" element={<Stewardship />} />
