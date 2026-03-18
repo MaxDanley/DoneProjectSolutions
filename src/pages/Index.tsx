@@ -53,8 +53,8 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={3} immediate>
             <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
-              <a href="mailto:contactus@doneprojectsolutions.com" className="btn-primary">Get in Touch</a>
-              <a href="#experience" className="btn-text">Our Services</a>
+              <a href="/#contact" className="btn-primary">Get in Touch</a>
+              <a href="/services" className="btn-text">Our Services</a>
             </div>
           </ScrollReveal>
         </div>
@@ -278,11 +278,11 @@ const Index = () => {
             { num: "03", title: "Pre-Construction & Team Alignment", text: "Coordinating design, procurement, and contractor selection with disciplined oversight  ensuring cost, schedule, and intent stay aligned before construction begins." },
             { num: "04", title: "Construction-Phase Owner Representation", text: "Serving as an experienced extension of the ownership team through delivery  protecting interests, resolving issues, and keeping the project on track." },
           ].map((item, i) => (
-            <ScrollReveal key={item.num} delay={Math.min(i, 2) as 0 | 1 | 2}>
-              <Link to="/services" style={{ textDecoration: "none", color: "inherit" }}>
+            <ScrollReveal key={item.num} delay={Math.min(i, 2) as 0 | 1 | 2} className="h-full">
+              <Link to="/services" style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
                 <div style={{
                   background: "#e6e2d8", padding: "52px 48px", display: "grid", gridTemplateColumns: "40px 1fr", gap: 28, alignItems: "start",
-                  borderLeft: "2px solid transparent", transition: "background 0.25s, border-color 0.25s",
+                  borderLeft: "2px solid transparent", transition: "background 0.25s, border-color 0.25s", height: "100%", boxSizing: "border-box",
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "#faf8f5"; e.currentTarget.style.borderLeftColor = "#4e7d8c"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "#e6e2d8"; e.currentTarget.style.borderLeftColor = "transparent"; }}

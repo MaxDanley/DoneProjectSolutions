@@ -127,7 +127,7 @@ const phaseCards = [
       "Investor Deliverables",
       "Preliminary Scheduling",
     ],
-    dark: false,
+    href: "#phase-due-diligence",
   },
   {
     num: "02",
@@ -140,7 +140,7 @@ const phaseCards = [
       "Value Engineering",
       "Constructability Reviews",
     ],
-    dark: false,
+    href: "#phase-pre-construction",
   },
   {
     num: "03",
@@ -153,7 +153,7 @@ const phaseCards = [
       "Pay App Reviews",
       "Weekly Coordination",
     ],
-    dark: false,
+    href: "#phase-construction",
   },
   {
     num: "04",
@@ -164,7 +164,7 @@ const phaseCards = [
       "Building Turnover",
       "Ops/Facility Planning",
     ],
-    dark: false,
+    href: "#phase-construction",
   },
 ];
 
@@ -174,9 +174,9 @@ const Services = () => {
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: "relative", minHeight: 520, display: "flex", alignItems: "flex-end", padding: "0 60px 80px", overflow: "hidden" }}>
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "0 60px 80px", overflow: "hidden" }}>
         <img src={heroHomeImg} alt="Construction projects skyline" style={{
-          position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0,
+          position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0,
         }} />
         <div style={{
           position: "absolute", inset: 0, zIndex: 1,
@@ -228,27 +228,30 @@ const Services = () => {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(78,125,140,0.18)" }} className="process-phases-grid">
             {phaseCards.map((card, i) => (
               <ScrollReveal key={card.num} delay={Math.min(i, 2) as 0 | 1 | 2} className="h-full">
-                <div
-                  style={{
-                    background: "#2e2c2a", padding: "44px 36px", borderTop: "2px solid #4e7d8c",
-                    transition: "background 0.3s", cursor: "default", height: "100%",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(78,125,140,0.08)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "#2e2c2a")}
-                >
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 11, letterSpacing: 2, color: "#4e7d8c", marginBottom: 20 }}>{card.num}</p>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "#e6e2d8", marginBottom: 24, lineHeight: 1.25 }}>
-                    {card.title}
-                  </h3>
-                  <ul style={{ listStyle: "none" }}>
-                    {card.items.map((item) => (
-                      <li key={item} style={{ fontSize: 13, color: "rgba(230,226,216,0.48)", padding: "5px 0", display: "flex", alignItems: "flex-start", gap: 8, lineHeight: 1.4 }}>
-                        <span style={{ color: "#4e7d8c", flexShrink: 0 }}>—</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <a href={card.href} style={{ textDecoration: "none", display: "block", height: "100%" }}>
+                  <div
+                    style={{
+                      background: "#2e2c2a", padding: "44px 36px", borderTop: "2px solid #4e7d8c",
+                      transition: "background 0.3s", cursor: "pointer", height: "100%",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(78,125,140,0.08)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "#2e2c2a")}
+                  >
+                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 11, letterSpacing: 2, color: "#4e7d8c", marginBottom: 20 }}>{card.num}</p>
+                    <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "#e6e2d8", marginBottom: 24, lineHeight: 1.25 }}>
+                      {card.title}
+                    </h3>
+                    <ul style={{ listStyle: "none" }}>
+                      {card.items.map((item) => (
+                        <li key={item} className="phase-list-item" style={{ fontSize: 13, color: "rgba(230,226,216,0.48)", padding: "5px 0", display: "flex", alignItems: "flex-start", gap: 8, lineHeight: 1.4 }}>
+                          <span style={{ color: "#4e7d8c", flexShrink: 0 }}>—</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "rgba(78,125,140,0.6)", marginTop: 24 }}>View Details →</p>
+                  </div>
+                </a>
               </ScrollReveal>
             ))}
           </div>
@@ -257,31 +260,28 @@ const Services = () => {
 
       {/* Process detail: Due Diligence (reusable for other phases) */}
       <ProcessDetailSection
+        id="phase-due-diligence"
         sectionTitle={dueDiligenceData.sectionTitle}
         engagementTitle={dueDiligenceData.engagementTitle}
         engagementContent={dueDiligenceData.engagementContent}
-        priceAmount={dueDiligenceData.priceAmount}
-        priceNoteLines={dueDiligenceData.priceNoteLines}
         deliverables={dueDiligenceData.deliverables}
       />
 
       {/* Process detail: Pre-Construction */}
       <ProcessDetailSection
+        id="phase-pre-construction"
         sectionTitle={preConstructionData.sectionTitle}
         engagementTitle={preConstructionData.engagementTitle}
         engagementContent={preConstructionData.engagementContent}
-        priceAmount={preConstructionData.priceAmount}
-        priceNoteLines={preConstructionData.priceNoteLines}
         deliverables={preConstructionData.deliverables}
       />
 
       {/* Process detail: Construction & Post-Construction (one section, grouped right column) */}
       <ProcessDetailSection
+        id="phase-construction"
         sectionTitle={constructionPostConstructionData.sectionTitle}
         engagementTitle={constructionPostConstructionData.engagementTitle}
         engagementContent={constructionPostConstructionData.engagementContent}
-        priceAmount={constructionPostConstructionData.priceAmount}
-        priceNoteLines={constructionPostConstructionData.priceNoteLines}
         deliverableGroups={constructionPostConstructionData.deliverableGroups}
       />
 
@@ -405,8 +405,7 @@ const Services = () => {
       {/* CTA */}
       <section style={{ padding: "80px 60px", background: "#e6e2d8", borderTop: "1px solid rgba(78,125,140,0.12)" }}>
         <div style={{ maxWidth: 920, margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center", gap: 16 }} className="cta-band-inner">
-          <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com">Get in Touch</a>
-          {/* <a href="mailto:contactus@doneprojectsolutions.com" className="btn-text">Send Message</a> */}
+          <a className="btn-primary" href="/#contact">Get in Touch</a>
         </div>
       </section>
 
@@ -416,6 +415,12 @@ const Services = () => {
         @media (max-width: 900px) {
           .services-all-grid, .process-phases-grid, .section-header-grid {
             grid-template-columns: 1fr !important;
+          }
+          .process-phases-grid .phase-list-item {
+            color: rgba(230,226,216,0.72) !important;
+          }
+          .process-phases-grid > * > a > div {
+            background: #3a3835 !important;
           }
           .fee-structure-grid {
             grid-template-columns: 1fr !important;

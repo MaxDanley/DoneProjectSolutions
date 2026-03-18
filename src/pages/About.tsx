@@ -103,41 +103,50 @@ const About = () => {
             {
               name: "Gaylord Pacific Hotel & Convention Center – Chula Vista, CA",
               img: "/Gaylord Pacific Hotel & Convention Center – Chula Vista, CA.jfif",
+              prior: true,
             },
             {
               name: "Allegiant Stadium – Las Vegas, NV",
               img: "/allegiant.jpg",
+              prior: true,
             },
             {
               name: "Geodis Park MLS Stadium – Nashville, TN",
               img: "/Geodis Park MLS Stadium – Nashville, TN.jpeg",
+              prior: true,
             },
             {
               name: "St. Louis MLS Stadium – St. Louis, MO",
               img: "/St. Louis MLS Stadium – St. Louis, MO.png",
+              prior: true,
             },
             {
               name: "Everwood Reserve Luxury Assisted Living Facility – TX",
               img: "/Everwood Reserve Luxury Assisted Living Facility – TX.jpg",
+              prior: false,
             },
             {
               name: "Multi-Family Build – San Diego, CA",
               img: "/Multi-Family Build – San Diego, CA.png",
+              prior: false,
             },
             {
               name: "100-Key Boutique Hotel – CO",
               img: "/100-Key Boutique Hotel – CO.png",
+              prior: false,
             },
             {
               name: "44-Key Boutique Hotel",
               img: "/44-Key-Boutique-hotel.png",
+              prior: false,
             },
             {
               name: "30-Key Boutique Hotel/Hostel – Los Angeles, CA",
               img: "/30-Key Boutique HotelHostel – Los Angeles, CA.png",
+              prior: false,
             },
           ].map((project, i) => (
-            <ScrollReveal key={project.name} delay={Math.min(i, 2) as 0 | 1 | 2}>
+            <ScrollReveal key={project.name} delay={Math.min(i, 2) as 0 | 1 | 2} className="h-full">
               <div
                 style={{
                   background: "#f0ede6",
@@ -147,6 +156,7 @@ const About = () => {
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
+                  height: "100%",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = "#faf8f5";
@@ -180,13 +190,19 @@ const About = () => {
                       color: "#2e2c2a",
                     }}
                   >
-                    {project.name}
+                    {project.name}{project.prior && <sup style={{ color: "#dc2626", fontSize: 11, marginLeft: 2 }}>*</sup>}
                   </p>
                 </div>
               </div>
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal>
+          <p style={{ marginTop: 32, fontSize: 12, color: "#dc2626", fontStyle: "italic", letterSpacing: 0.5 }}>
+            <sup>*</sup> Project experience through previous careers.
+          </p>
+        </ScrollReveal>
       </section>
 
       {/* STEWARDSHIP */}
