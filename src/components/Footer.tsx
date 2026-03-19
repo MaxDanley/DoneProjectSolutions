@@ -54,14 +54,6 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
-            <li>
-              <a href="mailto:contactus@doneprojectsolutions.com?subject=Client%20Portal%20Access" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
-              >
-                Client Portal
-              </a>
-            </li>
           </ul>
         </div>
 
