@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ProcessDetailSection } from "@/components/ProcessDetail";
 import type { DeliverableItem, DeliverableGroup } from "@/components/ProcessDetail";
-import heroHomeImg from "@/assets/hero-home.jpg";
+import heroHomeImg from "@/assets/hero-home.png";
 
 /** Reusable data shape for process detail sections (Due Diligence, Pre-Construction, etc.) */
 const dueDiligenceData = {

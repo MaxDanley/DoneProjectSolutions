@@ -40,8 +40,6 @@ const Footer = () => {
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
             {[
               { label: "Home", to: "/" },
-              { label: "Our Approach & Capabilities", to: "/#approach" },
-              { label: "Project Experience", to: "/project-experience" },
               { label: "Services", to: "/services" },
               { label: "About Us", to: "/about" },
               { label: "Stewardship", to: "/stewardship" },

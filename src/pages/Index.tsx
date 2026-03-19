@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import BlueprintCanvas from "@/components/BlueprintCanvas";
 import ScrollReveal from "@/components/ScrollReveal";
 import teamPlanningImg from "@/assets/team-planning.jpg";
-import heroHomeImg from "@/assets/hero-home.jpg";
+import heroHomeImg from "@/assets/hero-home.png";
 import completedBuildingImg from "@/assets/completed-building.jpg";
 import blueprintsDeskImg from "@/assets/blueprints-desk.jpg";
 
