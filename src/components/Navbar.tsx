@@ -88,7 +88,7 @@ const Navbar = () => {
       </ul>
 
       <a
-        href="mailto:contactus@doneprojectsolutions.com"
+        href="/#contact"
         className="nav-cta-desktop"
         style={{
           fontSize: 12,
@@ -148,8 +148,8 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <a
-            href="mailto:contactus@doneprojectsolutions.com"
+            <a
+            href="/#contact"
             onClick={() => setMobileOpen(false)}
             className="btn-primary"
             style={{ textAlign: "center", marginTop: 8 }}

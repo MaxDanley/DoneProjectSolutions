@@ -29,7 +29,7 @@ const Stewardship = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={3}>
-            <a href="#invest" className="btn-primary">Learn About Our Commitment</a>
+            <a href="/#contact" className="btn-primary md:whitespace-nowrap">If you know of any opportunities that align with this mission, please reach out</a>
           </ScrollReveal>
         </div>
       </section>

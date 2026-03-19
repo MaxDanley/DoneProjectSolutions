@@ -92,8 +92,8 @@ const ServicePageTemplate = ({ title, subtitle, deliverDesc, deliverItems, factT
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-              <a className="btn-primary" href="mailto:contactus@doneprojectsolutions.com">Get in Touch</a>
-              <a href="mailto:contactus@doneprojectsolutions.com" className="btn-text">Send Message</a>
+              <a className="btn-primary" href="/#contact">Get in Touch</a>
+              <a href="/#contact" className="btn-text">Let's Talk</a>
             </div>
           </ScrollReveal>
         </div>

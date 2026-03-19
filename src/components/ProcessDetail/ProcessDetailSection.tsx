@@ -21,8 +21,8 @@ export interface ProcessDetailSectionProps {
   engagementTitle: string;
   /** Engagement card body content */
   engagementContent: ReactNode;
-  /** Price amount (e.g. "$XX,000") */
-  priceAmount: string;
+  /** Price amount (e.g. "$XX,000") — omit to hide the price card entirely */
+  priceAmount?: string;
   /** Price card note (single string) */
   priceNote?: string;
   /** Price card note as multiple lines (each item on its own line) */
@@ -32,18 +32,20 @@ export interface ProcessDetailSectionProps {
   /** Grouped deliverables for the right column with subsection headings (e.g. CONSTRUCTION, POST-CONSTRUCTION) */
   deliverableGroups?: DeliverableGroup[];
   className?: string;
+  id?: string;
 }
 
 const ProcessDetailSection = ({
   sectionTitle,
   engagementTitle,
   engagementContent,
-  priceAmount,
+  priceAmount = "",
   priceNote,
   priceNoteLines,
   deliverables = [],
   deliverableGroups,
   className = "",
+  id,
 }: ProcessDetailSectionProps) => {
   const useGroups = deliverableGroups && deliverableGroups.length > 0;
   const rightContent = useGroups ? (
@@ -76,7 +78,7 @@ const ProcessDetailSection = ({
     ))
   );
   return (
-    <section className={className} style={{ marginTop: 0, marginBottom: 0, background: "#f0ede6", borderTop: "1px solid rgba(78,125,140,0.14)" }}>
+    <section id={id} className={className} style={{ marginTop: 0, marginBottom: 0, background: "#f0ede6", borderTop: "1px solid rgba(78,125,140,0.14)" }}>
       <ProcessDetailHeader title={sectionTitle} />
       <div
         style={{
@@ -103,9 +105,11 @@ const ProcessDetailSection = ({
           }}
         >
           <EngagementCard title={engagementTitle}>{engagementContent}</EngagementCard>
-          <div className="process-detail-price-wrap">
-            <PriceCard amount={priceAmount} note={priceNote} noteLines={priceNoteLines} />
-          </div>
+          {priceAmount && (
+            <div className="process-detail-price-wrap">
+              <PriceCard amount={priceAmount} note={priceNote} noteLines={priceNoteLines} />
+            </div>
+          )}
         </div>
         {/* Right column: deliverable cards or grouped cards */}
         <div className="process-detail-right-col" style={{ display: "flex", flexDirection: "column", paddingTop: 32, paddingBottom: 32 }}>
