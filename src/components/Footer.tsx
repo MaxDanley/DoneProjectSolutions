@@ -40,8 +40,6 @@ const Footer = () => {
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
             {[
               { label: "Home", to: "/" },
-              { label: "Our Approach & Capabilities", to: "/#approach" },
-              { label: "Project Experience", to: "/project-experience" },
               { label: "Services", to: "/services" },
               { label: "About Us", to: "/about" },
               { label: "Stewardship", to: "/stewardship" },
@@ -56,14 +54,6 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
-            <li>
-              <a href="mailto:contactus@doneprojectsolutions.com?subject=Client%20Portal%20Access" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
-              >
-                Client Portal
-              </a>
-            </li>
           </ul>
         </div>
 
