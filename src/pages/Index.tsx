@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlueprintCanvas from "@/components/BlueprintCanvas";
@@ -9,6 +10,17 @@ import completedBuildingImg from "@/assets/completed-building.jpg";
 import blueprintsDeskImg from "@/assets/blueprints-desk.jpg";
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#contact") {
+      // Delay so the `#contact` section exists after route transition.
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  }, [location.hash]);
+
   return (
     <div style={{ background: "#e6e2d8", color: "#2e2c2a", fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: 16, lineHeight: 1.7 }}>
       <Navbar />
