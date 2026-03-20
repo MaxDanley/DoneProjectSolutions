@@ -176,11 +176,11 @@ const Services = () => {
       {/* Hero */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "0 60px 80px", overflow: "hidden" }}>
         <img src={heroHomeImg} alt="Construction projects skyline" style={{
-          position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0,
+          position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0, opacity: 0.58,
         }} />
         <div style={{
           position: "absolute", inset: 0, zIndex: 1,
-          background: "linear-gradient(to top, rgba(46,44,42,0.85) 0%, rgba(46,44,42,0.4) 50%, rgba(46,44,42,0.15) 100%)",
+          background: "linear-gradient(to top, rgba(46,44,42,0.72) 0%, rgba(46,44,42,0.30) 50%, rgba(46,44,42,0.10) 100%)",
         }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 800 }}>
           <ScrollReveal immediate>

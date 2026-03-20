@@ -66,7 +66,7 @@ const Index = () => {
           <ScrollReveal delay={3} immediate>
             <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
               <a href="/#contact" className="btn-primary">Get in Touch</a>
-              <a href="/services" className="btn-text">Our Services</a>
+              <Link to="/services" className="btn-text">Our Services</Link>
             </div>
           </ScrollReveal>
         </div>
