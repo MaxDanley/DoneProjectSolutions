@@ -78,19 +78,6 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div style={{ marginTop: 36 }}>
-            <h4 style={{ fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: "#4e7d8c", marginBottom: 12 }}>Client Access</h4>
-            <ul style={{ listStyle: "none" }}>
-              <li>
-                <a href="mailto:contactus@doneprojectsolutions.com?subject=Project%20Dashboard%20Login%20Request" style={{ fontSize: 13, color: "rgba(230,226,216,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#e6e2d8")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(230,226,216,0.5)")}
-                >
-                  Project Dashboard Login →
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
